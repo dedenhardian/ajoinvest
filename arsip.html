@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Arsip Screening · AJOINVEST</title>
+<meta name="description" content="Arsip screening akumulasi asing harian IDX oleh AJOINVEST. Rekam jejak per tanggal.">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='7' fill='%231c1b19'/><path d='M6 22 L13 14 L18 18 L26 9' stroke='%23e8821e' stroke-width='3' fill='none' stroke-linecap='round' stroke-linejoin='round'/></svg>">
+<style>
+/* ===== Tema AJOINVEST — Light / Brand IG (charcoal + beige + oranye) ===== */
+:root{
+  --bg:#f7f3ea; --bg2:#f1ebdd; --card:#ffffff; --line:#e7dfcd;
+  --ink:#1f1c17; --mut:#7c746a;
+  --tan:#cdbf9e; --tan-soft:#ece4d2;
+  --orange:#e8821e; --orange-d:#c96f12;
+  --dark:#1c1b19; --dark-txt:#efe7d6;
+  --buy:#16a34a; --sell:#dc2626;
+  --grn:#e8821e; --grn2:#c96f12; --accent:#e8821e;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{
+  margin:0; color:var(--ink); background:var(--bg);
+  font-family:-apple-system,Segoe UI,Roboto,Arial,sans-serif; line-height:1.6;
+  min-height:100vh;
+}
+a{color:var(--orange-d);text-decoration:none}
+a:hover{text-decoration:underline}
+.wrap{max-width:960px;margin:0 auto;padding:0 20px}
+
+/* Nav — bar charcoal gelap */
+.nav{position:sticky;top:0;z-index:10;background:var(--dark);border-bottom:1px solid #2c2a26}
+.nav .wrap{display:flex;align-items:center;justify-content:space-between;height:60px}
+.brand{font-weight:800;letter-spacing:.5px;font-size:17px;color:var(--dark-txt)}
+.brand span{color:var(--orange)}
+.nav ul{display:flex;gap:22px;list-style:none;margin:0;padding:0;font-size:14px}
+.nav a{color:#b7ad9a}
+.nav a.active,.nav a:hover{color:#fff;text-decoration:none}
+
+/* Hero */
+.hero{padding:70px 0 40px;text-align:center}
+.hero h1{font-size:38px;margin:0 0 10px;line-height:1.2;color:var(--ink)}
+.hero h1 span{color:var(--orange)}
+.hero p{color:var(--mut);font-size:17px;max-width:620px;margin:0 auto 26px}
+.btn{display:inline-block;background:var(--orange);color:#fff;font-weight:700;
+  padding:11px 22px;border-radius:10px;font-size:15px;margin:4px}
+.btn:hover{text-decoration:none;filter:brightness(1.05)}
+.btn.ghost{background:transparent;color:var(--ink);border:1px solid #d8cfbc}
+
+/* Sections & cards */
+section{padding:34px 0}
+h2.section{font-size:22px;margin:0 0 18px;color:var(--ink)}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:18px}
+.card{background:var(--card);border:1px solid var(--line);border-radius:14px;
+  padding:20px;box-shadow:0 6px 20px rgba(60,50,30,.06)}
+.card h3{margin:0 0 8px;font-size:16px;color:var(--ink)}
+.card p{margin:0;color:var(--mut);font-size:14px}
+.tag{display:inline-block;font-size:11px;color:#8a5a12;background:var(--tan-soft);
+  border:1px solid #ddd0b3;padding:2px 9px;border-radius:20px;margin-bottom:10px}
+
+/* About / lead */
+.lead{font-size:16px;color:var(--ink)}
+.lead b{color:#000}
+.factrow{display:flex;flex-wrap:wrap;gap:10px;margin:14px 0 0}
+.fact{font-size:12px;color:#6b5a3a;background:var(--tan-soft);border:1px solid #ddd0b3;
+  padding:4px 11px;border-radius:20px}
+
+/* Screening table */
+.legend{font-size:13px;color:var(--mut);margin:0 0 20px;line-height:1.6}
+table{width:100%;border-collapse:collapse;font-size:13px}
+th{text-align:left;color:var(--mut);font-weight:600;font-size:11px;text-transform:uppercase;
+  letter-spacing:.5px;padding:6px 10px;border-bottom:1px solid var(--line)}
+td{padding:9px 10px;border-bottom:1px solid var(--line)}
+tr:last-child td{border-bottom:none}
+.rank{color:var(--mut);width:26px}.code{font-weight:700;letter-spacing:.5px;color:var(--ink)}
+.num{text-align:right;font-variant-numeric:tabular-nums}
+.ratio{font-weight:700;color:var(--buy)}
+.bar{height:4px;background:#ece4d2;border-radius:3px;margin-top:5px;overflow:hidden}
+.bar span{display:block;height:100%;border-radius:3px}
+/* Kolom Net Foreign Value TANPA bar. Bar hanya di kolom Rasio B/S: */
+/* Bar proporsi beli vs jual (hijau=beli, merah=jual) */
+.rbar{width:84px;height:6px;border-radius:4px;overflow:hidden;margin:5px 0 0 auto;background:var(--sell)}
+.rbar b{display:block;height:100%;background:var(--buy);border-radius:4px 0 0 4px}
+.tscroll{overflow-x:auto;-webkit-overflow-scrolling:touch}
+.pill{font-size:11px;color:#15803d;background:#dcfce7;border:1px solid #bbf7d0;
+  padding:2px 8px;border-radius:20px;white-space:nowrap}
+.pill.sell{color:#b91c1c;background:#fee2e2;border-color:#fecaca}
+
+/* Blog */
+.post{border-bottom:1px solid var(--line);padding:20px 0}
+.post:last-child{border-bottom:none}
+.post h3{margin:0 0 6px;font-size:19px}
+.post h3 a{color:var(--ink)}
+.post .meta{color:var(--mut);font-size:12px;margin-bottom:8px}
+.article{max-width:720px;margin:0 auto}
+.article h1{font-size:30px;margin:10px 0 6px;color:var(--ink)}
+.article h2{font-size:20px;margin:28px 0 8px;color:var(--ink)}
+.article .meta{color:var(--mut);font-size:13px;margin-bottom:24px}
+.article p{margin:0 0 16px}
+.article ul{margin:0 0 16px;padding-left:20px;color:var(--ink)}
+.article li{margin-bottom:6px}
+.note{background:var(--tan-soft);border:1px solid #ddd0b3;border-left:3px solid var(--orange);
+  border-radius:8px;padding:14px 16px;color:#6b5a3a;font-size:14px;margin:0 0 16px}
+
+/* Tabel di dalam artikel */
+.article table th{font-size:12px}
+.article table td{padding:9px 10px}
+
+/* Footer */
+footer{border-top:1px solid var(--line);margin-top:40px;padding:26px 0;
+  color:var(--mut);font-size:13px;text-align:center}
+footer .social{margin-bottom:10px;display:flex;gap:16px;justify-content:center;flex-wrap:wrap}
+footer .social a{color:var(--orange-d)}
+
+@media(max-width:560px){
+  .hero h1{font-size:30px}
+  .nav ul{gap:14px}
+  table{font-size:12px}
+  th,td{padding:7px 6px}
+  .num{white-space:nowrap}
+  .rbar{width:52px;height:5px}
+  .pill{font-size:10px;padding:2px 6px}
+}
+</style>
+</head>
+<body>
+
+<nav class="nav"><div class="wrap">
+  <div class="brand">AJO<span>INVEST</span></div>
+  <ul>
+    <li><a href="index.html">Beranda</a></li>
+    <li><a href="screening.html" class="active">Screening Harian</a></li>
+    <li><a href="blog.html">Blog</a></li>
+    <li><a href="ebook.html">Ebook</a></li>
+    <li><a href="about.html">Tentang</a></li>
+  </ul>
+</div></nav>
+
+<section><div class="wrap" style="max-width:760px">
+  <h2 class="section">Arsip Screening Harian</h2>
+  <p class="legend">Rekam jejak screening akumulasi asing dari hari ke hari. Dibuka apa adanya, biar kamu bisa menilai sendiri konsistensi dan hasilnya dari waktu ke waktu. Data lama tidak diubah setelah dipublikasikan.</p>
+
+  <div class="post">
+    <div class="meta">Sesi 1</div>
+    <h3><a href="arsip/2026-08-18.html">Screening 18 Agustus 2026</a></h3>
+    <p style="color:var(--mut);margin:0">Highlight 12 saham, Radar 11 saham.</p>
+  </div>
+
+</div></section>
+
+<footer><div class="wrap">
+  <div class="social">
+    <a href="https://www.instagram.com/ajo.invest" target="_blank" rel="noopener">Instagram</a>
+  </div>
+  © 2026 AJOINVEST · Bukan rekomendasi jual/beli. Data historis untuk edukasi.
+</div></footer>
+
+</body>
+</html>
