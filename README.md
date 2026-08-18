@@ -1,22 +1,28 @@
-# Situs Screening Saham
+# Situs AJOINVEST
 
-Situs statis pribadi: screening akumulasi asing harian (IDX) + blog.
+Situs statis pribadi: screening akumulasi asing harian (IDX) + blog + tentang.
 
 ## Isi
 - `index.html` — Beranda
+- `about.html` — Tentang Saya
 - `screening.html` — Screening harian (diganti tiap hari)
 - `blog.html` — Daftar artikel blog
 - `posts/` — Artikel blog
-- `assets/style.css` — Tema tampilan (semua halaman)
 - `.nojekyll` — memberitahu GitHub Pages agar menyajikan file apa adanya
+
+Catatan: setiap halaman punya CSS-nya sendiri di dalam file (inline `<style>`),
+supaya upload ke GitHub tidak pernah gagal karena file terpisah. File
+`assets/style.css` TIDAK dipakai oleh halaman mana pun (boleh diabaikan/dihapus).
 
 ## Cara update screening harian
 1. Kirim PDF Foreign Transaction (Sesi 1) ke asisten, minta "buatkan screening.html".
-2. Ganti file `screening.html` di repo ini dengan yang baru (Upload files → commit).
+2. Ganti file `screening.html` di repo ini (Edit → paste → Commit).
 3. Situs otomatis ter-update dalam 1–2 menit.
 
-## Personalisasi
-Cari teks `AJOINVEST`, `NAMAANDA`, dan bagian dalam `[ ... ]` di file `.html`,
-lalu ganti dengan identitas Anda.
+## Yang masih perlu Anda isi sendiri
+Cari dan ganti hal-hal ini di semua file `.html`:
+- `email@anda.com` → alamat email Anda
+- Tautan Instagram / X di footer (`href="#"`) → link akun Anda
+- (Opsional) Nama asli di `about.html` jika ingin lebih personal
 
 Bukan rekomendasi jual/beli. Konten untuk edukasi.
