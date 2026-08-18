@@ -16,7 +16,7 @@ Situs statis pribadi: screening akumulasi asing harian (IDX) + blog.
 3. Situs otomatis ter-update dalam 1–2 menit.
 
 ## Personalisasi
-Cari teks `Nama Anda`, `NAMAANDA`, dan bagian dalam `[ ... ]` di file `.html`,
+Cari teks `AJOINVEST`, `NAMAANDA`, dan bagian dalam `[ ... ]` di file `.html`,
 lalu ganti dengan identitas Anda.
 
 Bukan rekomendasi jual/beli. Konten untuk edukasi.
