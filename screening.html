@@ -3,11 +3,11 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Screening Akumulasi Asing — 18 Agustus 2026</title>
+<title>Screening Akumulasi Asing · 18 Agustus 2026</title>
 <meta name="description" content="Screening akumulasi asing IDX Sesi 1, 18 Agustus 2026.">
 <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='7' fill='%231c1b19'/><path d='M6 22 L13 14 L18 18 L26 9' stroke='%23e8821e' stroke-width='3' fill='none' stroke-linecap='round' stroke-linejoin='round'/></svg>">
 <style>
-/* ===== Tema AJOINVEST — Light / Brand IG (charcoal + beige + oranye) ===== */
+/* ===== Tema AJOINVEST, Light / Brand IG (charcoal + beige + oranye) ===== */
 :root{
   --bg:#f7f3ea; --bg2:#f1ebdd; --card:#ffffff; --line:#e7dfcd;
   --ink:#1f1c17; --mut:#7c746a;
@@ -28,7 +28,7 @@ a{color:var(--orange-d);text-decoration:none}
 a:hover{text-decoration:underline}
 .wrap{max-width:960px;margin:0 auto;padding:0 20px}
 
-/* Nav — bar charcoal gelap */
+/* Nav, bar charcoal gelap */
 .nav{position:sticky;top:0;z-index:10;background:var(--dark);border-bottom:1px solid #2c2a26}
 .nav .wrap{display:flex;align-items:center;justify-content:space-between;height:60px}
 .brand{font-weight:800;letter-spacing:.5px;font-size:17px;color:var(--dark-txt)}
@@ -79,6 +79,7 @@ tr:last-child td{border-bottom:none}
 .bar span{display:block;height:100%;border-radius:3px}
 .rbar{width:84px;height:6px;border-radius:4px;overflow:hidden;margin:5px 0 0 auto;background:var(--sell)}
 .rbar b{display:block;height:100%;background:var(--buy);border-radius:4px 0 0 4px}
+.tscroll{overflow-x:auto;-webkit-overflow-scrolling:touch}
 .pill{font-size:11px;color:#15803d;background:#dcfce7;border:1px solid #bbf7d0;
   padding:2px 8px;border-radius:20px;white-space:nowrap}
 .pill.sell{color:#b91c1c;background:#fee2e2;border-color:#fecaca}
@@ -112,8 +113,17 @@ footer .social a{color:var(--orange-d)}
 @media(max-width:560px){
   .hero h1{font-size:30px}
   .nav ul{gap:14px}
-  .avgcol{display:none}
+  table{font-size:12px}
+  th,td{padding:7px 6px}
+  .num{white-space:nowrap}
+  .rbar{width:52px;height:5px}
+  .pill{font-size:10px;padding:2px 6px}
 }
+
+/* Sort tabel */
+.sortable th{cursor:pointer;user-select:none;white-space:nowrap}
+.sortable th:hover{color:var(--ink)}
+.arw{color:var(--orange);font-size:10px;margin-left:3px}
 </style>
 </head>
 <body>
@@ -123,6 +133,7 @@ footer .social a{color:var(--orange-d)}
     <li><a href="index.html">Beranda</a></li>
     <li><a href="screening.html" class="active">Screening Harian</a></li>
     <li><a href="blog.html">Blog</a></li>
+    <li><a href="ebook.html">Ebook</a></li>
     <li><a href="about.html">Tentang</a></li>
   </ul>
 </div></nav>
@@ -131,22 +142,69 @@ footer .social a{color:var(--orange-d)}
   <h2 class="section">📈 Screening Akumulasi Asing</h2>
   <p class="legend">Sesi 1 · <b>18 Agustus 2026</b> · sumber: data Foreign Transaction IDX.<br>
   Diurut dari Net Foreign Value terbesar. Kategori: <b>Highlight</b> = akumulasi kuat &amp; nilai besar, <b>Radar</b> = akumulasi sangat kuat tapi nilai masih kecil.</p>
+  <p class="legend" style="margin-top:-10px">💡 Klik judul kolom (mis. Net Foreign Value atau Rasio B/S) untuk mengurutkan.</p>
 
   <div class="card" style="margin-bottom:22px">
-    <h3 style="margin-top:0">🟢 Highlight — Akumulasi Kuat <span style="color:var(--mut);font-weight:400;font-size:13px">(Rasio &gt;200% &amp; Net ≥ Rp 5 M · 12 saham)</span></h3>
-    <table><thead><tr><th>#</th><th>Kode</th><th class="num">Net Foreign Value</th><th class="num">Rasio B/S</th><th class="num avgcol">Avg</th><th>Sinyal</th></tr></thead><tbody><tr><td class="rank">1</td><td class="code">ANTM</td><td class="num">Rp 62.35 M</td><td class="num"><span class="ratio">244%</span><div class="rbar" title="Beli 77% : Jual 23%"><b style="width:77%"></b></div></td><td class="num avgcol">3,120</td><td><span class="pill">Beli Kuat</span></td></tr><tr><td class="rank">2</td><td class="code">INDY</td><td class="num">Rp 29.23 M</td><td class="num"><span class="ratio">272%</span><div class="rbar" title="Beli 79% : Jual 21%"><b style="width:79%"></b></div></td><td class="num avgcol">2,691</td><td><span class="pill">Beli Kuat</span></td></tr><tr><td class="rank">3</td><td class="code">BBNI</td><td class="num">Rp 15.35 M</td><td class="num"><span class="ratio">234%</span><div class="rbar" title="Beli 77% : Jual 23%"><b style="width:77%"></b></div></td><td class="num avgcol">3,640</td><td><span class="pill">Beli Kuat</span></td></tr><tr><td class="rank">4</td><td class="code">PSAB</td><td class="num">Rp 14.67 M</td><td class="num"><span class="ratio">1,035%</span><div class="rbar" title="Beli 92% : Jual 8%"><b style="width:92%"></b></div></td><td class="num avgcol">513</td><td><span class="pill">Beli Sangat Kuat</span></td></tr><tr><td class="rank">5</td><td class="code">TOWR</td><td class="num">Rp 12.08 M</td><td class="num"><span class="ratio">463%</span><div class="rbar" title="Beli 85% : Jual 15%"><b style="width:85%"></b></div></td><td class="num avgcol">409</td><td><span class="pill">Beli Sangat Kuat</span></td></tr><tr><td class="rank">6</td><td class="code">PTBA</td><td class="num">Rp 9.59 M</td><td class="num"><span class="ratio">1,059%</span><div class="rbar" title="Beli 92% : Jual 8%"><b style="width:92%"></b></div></td><td class="num avgcol">2,364</td><td><span class="pill">Beli Sangat Kuat</span></td></tr><tr><td class="rank">7</td><td class="code">RMKE</td><td class="num">Rp 9.02 M</td><td class="num"><span class="ratio">551%</span><div class="rbar" title="Beli 87% : Jual 13%"><b style="width:87%"></b></div></td><td class="num avgcol">409</td><td><span class="pill">Beli Sangat Kuat</span></td></tr><tr><td class="rank">8</td><td class="code">SRTG</td><td class="num">Rp 8.55 M</td><td class="num"><span class="ratio">413%</span><div class="rbar" title="Beli 84% : Jual 16%"><b style="width:84%"></b></div></td><td class="num avgcol">1,848</td><td><span class="pill">Beli Sangat Kuat</span></td></tr><tr><td class="rank">9</td><td class="code">GULA</td><td class="num">Rp 7.93 M</td><td class="num"><span class="ratio">343%</span><div class="rbar" title="Beli 82% : Jual 18%"><b style="width:82%"></b></div></td><td class="num avgcol">740</td><td><span class="pill">Beli Sangat Kuat</span></td></tr><tr><td class="rank">10</td><td class="code">HRUM</td><td class="num">Rp 7.74 M</td><td class="num"><span class="ratio">461%</span><div class="rbar" title="Beli 85% : Jual 15%"><b style="width:85%"></b></div></td><td class="num avgcol">880</td><td><span class="pill">Beli Sangat Kuat</span></td></tr><tr><td class="rank">11</td><td class="code">JARR</td><td class="num">Rp 7.18 M</td><td class="num"><span class="ratio">493%</span><div class="rbar" title="Beli 86% : Jual 14%"><b style="width:86%"></b></div></td><td class="num avgcol">2,434</td><td><span class="pill">Beli Sangat Kuat</span></td></tr><tr><td class="rank">12</td><td class="code">KETR</td><td class="num">Rp 5.92 M</td><td class="num"><span class="ratio">1,248%</span><div class="rbar" title="Beli 93% : Jual 7%"><b style="width:93%"></b></div></td><td class="num avgcol">593</td><td><span class="pill">Beli Sangat Kuat</span></td></tr></tbody></table>
+    <h3 style="margin-top:0">🟢 Highlight, Akumulasi Kuat <span style="color:var(--mut);font-weight:400;font-size:13px">(Rasio &gt;2x &amp; Net ≥ Rp 5 M · 12 saham)</span></h3>
+    <div class="tscroll"><table class="sortable"><thead><tr><th>#</th><th>Kode</th><th class="num">Net Foreign Value</th><th class="num">Rasio B/S</th><th>Sinyal</th></tr></thead><tbody><tr><td class="rank">1</td><td class="code">ANTM</td><td class="num">Rp 62.35 M</td><td class="num"><span class="ratio">2.4x</span><div class="rbar" title="Beli 77% : Jual 23%"><b style="width:77%"></b></div></td><td><span class="pill">Beli Kuat</span></td></tr><tr><td class="rank">2</td><td class="code">INDY</td><td class="num">Rp 29.23 M</td><td class="num"><span class="ratio">2.7x</span><div class="rbar" title="Beli 79% : Jual 21%"><b style="width:79%"></b></div></td><td><span class="pill">Beli Kuat</span></td></tr><tr><td class="rank">3</td><td class="code">BBNI</td><td class="num">Rp 15.35 M</td><td class="num"><span class="ratio">2.3x</span><div class="rbar" title="Beli 77% : Jual 23%"><b style="width:77%"></b></div></td><td><span class="pill">Beli Kuat</span></td></tr><tr><td class="rank">4</td><td class="code">PSAB</td><td class="num">Rp 14.67 M</td><td class="num"><span class="ratio">10.3x</span><div class="rbar" title="Beli 92% : Jual 8%"><b style="width:92%"></b></div></td><td><span class="pill">Beli Sangat Kuat</span></td></tr><tr><td class="rank">5</td><td class="code">TOWR</td><td class="num">Rp 12.08 M</td><td class="num"><span class="ratio">4.6x</span><div class="rbar" title="Beli 85% : Jual 15%"><b style="width:85%"></b></div></td><td><span class="pill">Beli Sangat Kuat</span></td></tr><tr><td class="rank">6</td><td class="code">PTBA</td><td class="num">Rp 9.59 M</td><td class="num"><span class="ratio">10.6x</span><div class="rbar" title="Beli 92% : Jual 8%"><b style="width:92%"></b></div></td><td><span class="pill">Beli Sangat Kuat</span></td></tr><tr><td class="rank">7</td><td class="code">RMKE</td><td class="num">Rp 9.02 M</td><td class="num"><span class="ratio">5.5x</span><div class="rbar" title="Beli 87% : Jual 13%"><b style="width:87%"></b></div></td><td><span class="pill">Beli Sangat Kuat</span></td></tr><tr><td class="rank">8</td><td class="code">SRTG</td><td class="num">Rp 8.55 M</td><td class="num"><span class="ratio">4.1x</span><div class="rbar" title="Beli 84% : Jual 16%"><b style="width:84%"></b></div></td><td><span class="pill">Beli Sangat Kuat</span></td></tr><tr><td class="rank">9</td><td class="code">GULA</td><td class="num">Rp 7.93 M</td><td class="num"><span class="ratio">3.4x</span><div class="rbar" title="Beli 82% : Jual 18%"><b style="width:82%"></b></div></td><td><span class="pill">Beli Sangat Kuat</span></td></tr><tr><td class="rank">10</td><td class="code">HRUM</td><td class="num">Rp 7.74 M</td><td class="num"><span class="ratio">4.6x</span><div class="rbar" title="Beli 85% : Jual 15%"><b style="width:85%"></b></div></td><td><span class="pill">Beli Sangat Kuat</span></td></tr><tr><td class="rank">11</td><td class="code">JARR</td><td class="num">Rp 7.18 M</td><td class="num"><span class="ratio">4.9x</span><div class="rbar" title="Beli 86% : Jual 14%"><b style="width:86%"></b></div></td><td><span class="pill">Beli Sangat Kuat</span></td></tr><tr><td class="rank">12</td><td class="code">KETR</td><td class="num">Rp 5.92 M</td><td class="num"><span class="ratio">12.5x</span><div class="rbar" title="Beli 93% : Jual 7%"><b style="width:93%"></b></div></td><td><span class="pill">Beli Sangat Kuat</span></td></tr></tbody></table></div>
   </div>
 
   <div class="card">
-    <h3 style="margin-top:0">🌱 Akumulasi Dini / Radar <span style="color:var(--mut);font-weight:400;font-size:13px">(Rasio &gt;300% &amp; Net Rp 1–5 M · 11 saham)</span></h3>
-    <table><thead><tr><th>#</th><th>Kode</th><th class="num">Net Foreign Value</th><th class="num">Rasio B/S</th><th class="num avgcol">Avg</th><th>Sinyal</th></tr></thead><tbody><tr><td class="rank">1</td><td class="code">TAPG</td><td class="num">Rp 4.04 M</td><td class="num"><span class="ratio">488%</span><div class="rbar" title="Beli 85% : Jual 15%"><b style="width:85%"></b></div></td><td class="num avgcol">1,814</td><td><span class="pill">Beli Sangat Kuat</span></td></tr><tr><td class="rank">2</td><td class="code">BDMN</td><td class="num">Rp 3.79 M</td><td class="num"><span class="ratio">544%</span><div class="rbar" title="Beli 87% : Jual 13%"><b style="width:87%"></b></div></td><td class="num avgcol">4,301</td><td><span class="pill">Beli Sangat Kuat</span></td></tr><tr><td class="rank">3</td><td class="code">COIN</td><td class="num">Rp 2.72 M</td><td class="num"><span class="ratio">1,538%</span><div class="rbar" title="Beli 94% : Jual 6%"><b style="width:94%"></b></div></td><td class="num avgcol">707</td><td><span class="pill">Beli Sangat Kuat</span></td></tr><tr><td class="rank">4</td><td class="code">ELSA</td><td class="num">Rp 2.64 M</td><td class="num"><span class="ratio">316%</span><div class="rbar" title="Beli 81% : Jual 19%"><b style="width:81%"></b></div></td><td class="num avgcol">698</td><td><span class="pill">Beli Sangat Kuat</span></td></tr><tr><td class="rank">5</td><td class="code">SCMA</td><td class="num">Rp 2.33 M</td><td class="num"><span class="ratio">598%</span><div class="rbar" title="Beli 87% : Jual 13%"><b style="width:87%"></b></div></td><td class="num avgcol">204</td><td><span class="pill">Beli Sangat Kuat</span></td></tr><tr><td class="rank">6</td><td class="code">MINA</td><td class="num">Rp 2.20 M</td><td class="num"><span class="ratio">523%</span><div class="rbar" title="Beli 86% : Jual 14%"><b style="width:86%"></b></div></td><td class="num avgcol">272</td><td><span class="pill">Beli Sangat Kuat</span></td></tr><tr><td class="rank">7</td><td class="code">GPRA</td><td class="num">Rp 1.98 M</td><td class="num"><span class="ratio">335%</span><div class="rbar" title="Beli 81% : Jual 19%"><b style="width:81%"></b></div></td><td class="num avgcol">108</td><td><span class="pill">Beli Sangat Kuat</span></td></tr><tr><td class="rank">8</td><td class="code">BSML</td><td class="num">Rp 1.63 M</td><td class="num"><span class="ratio">376%</span><div class="rbar" title="Beli 83% : Jual 17%"><b style="width:83%"></b></div></td><td class="num avgcol">515</td><td><span class="pill">Beli Sangat Kuat</span></td></tr><tr><td class="rank">9</td><td class="code">LPKR</td><td class="num">Rp 1.54 M</td><td class="num"><span class="ratio">732%</span><div class="rbar" title="Beli 89% : Jual 11%"><b style="width:89%"></b></div></td><td class="num avgcol">62</td><td><span class="pill">Beli Sangat Kuat</span></td></tr><tr><td class="rank">10</td><td class="code">WIRG</td><td class="num">Rp 1.46 M</td><td class="num"><span class="ratio">400%</span><div class="rbar" title="Beli 83% : Jual 17%"><b style="width:83%"></b></div></td><td class="num avgcol">67</td><td><span class="pill">Beli Sangat Kuat</span></td></tr><tr><td class="rank">11</td><td class="code">INDO</td><td class="num">Rp 1.28 M</td><td class="num"><span class="ratio">360%</span><div class="rbar" title="Beli 82% : Jual 18%"><b style="width:82%"></b></div></td><td class="num avgcol">178</td><td><span class="pill">Beli Sangat Kuat</span></td></tr></tbody></table>
+    <h3 style="margin-top:0">🌱 Akumulasi Dini / Radar <span style="color:var(--mut);font-weight:400;font-size:13px">(Rasio &gt;3x &amp; Net Rp 1–5 M · 11 saham)</span></h3>
+    <div class="tscroll"><table class="sortable"><thead><tr><th>#</th><th>Kode</th><th class="num">Net Foreign Value</th><th class="num">Rasio B/S</th><th>Sinyal</th></tr></thead><tbody><tr><td class="rank">1</td><td class="code">TAPG</td><td class="num">Rp 4.04 M</td><td class="num"><span class="ratio">4.9x</span><div class="rbar" title="Beli 85% : Jual 15%"><b style="width:85%"></b></div></td><td><span class="pill">Beli Sangat Kuat</span></td></tr><tr><td class="rank">2</td><td class="code">BDMN</td><td class="num">Rp 3.79 M</td><td class="num"><span class="ratio">5.4x</span><div class="rbar" title="Beli 87% : Jual 13%"><b style="width:87%"></b></div></td><td><span class="pill">Beli Sangat Kuat</span></td></tr><tr><td class="rank">3</td><td class="code">COIN</td><td class="num">Rp 2.72 M</td><td class="num"><span class="ratio">15.4x</span><div class="rbar" title="Beli 94% : Jual 6%"><b style="width:94%"></b></div></td><td><span class="pill">Beli Sangat Kuat</span></td></tr><tr><td class="rank">4</td><td class="code">ELSA</td><td class="num">Rp 2.64 M</td><td class="num"><span class="ratio">3.2x</span><div class="rbar" title="Beli 81% : Jual 19%"><b style="width:81%"></b></div></td><td><span class="pill">Beli Sangat Kuat</span></td></tr><tr><td class="rank">5</td><td class="code">SCMA</td><td class="num">Rp 2.33 M</td><td class="num"><span class="ratio">6.0x</span><div class="rbar" title="Beli 87% : Jual 13%"><b style="width:87%"></b></div></td><td><span class="pill">Beli Sangat Kuat</span></td></tr><tr><td class="rank">6</td><td class="code">MINA</td><td class="num">Rp 2.20 M</td><td class="num"><span class="ratio">5.2x</span><div class="rbar" title="Beli 86% : Jual 14%"><b style="width:86%"></b></div></td><td><span class="pill">Beli Sangat Kuat</span></td></tr><tr><td class="rank">7</td><td class="code">GPRA</td><td class="num">Rp 1.98 M</td><td class="num"><span class="ratio">3.4x</span><div class="rbar" title="Beli 81% : Jual 19%"><b style="width:81%"></b></div></td><td><span class="pill">Beli Sangat Kuat</span></td></tr><tr><td class="rank">8</td><td class="code">BSML</td><td class="num">Rp 1.63 M</td><td class="num"><span class="ratio">3.8x</span><div class="rbar" title="Beli 83% : Jual 17%"><b style="width:83%"></b></div></td><td><span class="pill">Beli Sangat Kuat</span></td></tr><tr><td class="rank">9</td><td class="code">LPKR</td><td class="num">Rp 1.54 M</td><td class="num"><span class="ratio">7.3x</span><div class="rbar" title="Beli 89% : Jual 11%"><b style="width:89%"></b></div></td><td><span class="pill">Beli Sangat Kuat</span></td></tr><tr><td class="rank">10</td><td class="code">WIRG</td><td class="num">Rp 1.46 M</td><td class="num"><span class="ratio">4x</span><div class="rbar" title="Beli 83% : Jual 17%"><b style="width:83%"></b></div></td><td><span class="pill">Beli Sangat Kuat</span></td></tr><tr><td class="rank">11</td><td class="code">INDO</td><td class="num">Rp 1.28 M</td><td class="num"><span class="ratio">3.6x</span><div class="rbar" title="Beli 82% : Jual 18%"><b style="width:82%"></b></div></td><td><span class="pill">Beli Sangat Kuat</span></td></tr></tbody></table></div>
   </div>
 
   <p class="legend" style="margin-top:20px">Bukan rekomendasi jual/beli. Rasio dapat membesar saat Foreign Sell kecil; selalu dibaca bersama filter Net Foreign Value.</p>
 </div></section>
 
 <footer><div class="wrap">
+  <div class="social">
+    <a href="https://www.instagram.com/ajo.invest" target="_blank" rel="noopener">Instagram</a>
+  </div>
   © 2026 AJOINVEST · Diperbarui otomatis dari data Foreign Transaction · Bukan rekomendasi jual/beli.
 </div></footer>
+
+<script>
+(function(){
+  function val(td, idx){
+    var t=(td.textContent||'').trim();
+    if(idx===3){ var m=t.match(/([\d.]+)\s*x/i); return m?parseFloat(m[1]):-Infinity; } // Rasio B/S (x)
+    if(idx===2){ // Net Foreign Value (Rp, suffix)
+      var m=t.match(/([\d.,]+)\s*(t|b|m|jt|rb|k)?/i);
+      if(!m) return -Infinity;
+      var num=parseFloat(m[1].replace(/,/g,''));
+      var f={t:1e12,b:1e9,m:1e9,jt:1e6,rb:1e3,k:1e3}[(m[2]||'m').toLowerCase()]||1;
+      return num*f;
+    }
+    if(idx===0){ var n=parseFloat(t); return isNaN(n)?0:n; } // #
+    return t.toLowerCase(); // Kode / Sinyal
+  }
+  function sortBy(table, idx, th){
+    var tb=table.tBodies[0], rows=Array.prototype.slice.call(tb.rows);
+    var dir=(th.getAttribute('data-dir')==='asc')?'desc':'asc';
+    var ths=table.tHead.rows[0].cells;
+    for(var j=0;j<ths.length;j++){ if(ths[j]!==th){ ths[j].removeAttribute('data-dir'); var a=ths[j].querySelector('.arw'); if(a)a.textContent=''; } }
+    th.setAttribute('data-dir',dir);
+    var ar=th.querySelector('.arw'); if(ar) ar.textContent = dir==='asc'?'▲':'▼';
+    rows.sort(function(r1,r2){
+      var v1=val(r1.cells[idx],idx), v2=val(r2.cells[idx],idx);
+      if(v1<v2) return dir==='asc'?-1:1;
+      if(v1>v2) return dir==='asc'?1:-1;
+      return 0;
+    });
+    rows.forEach(function(r){ tb.appendChild(r); });
+  }
+  document.querySelectorAll('table.sortable').forEach(function(table){
+    var ths=table.tHead.rows[0].cells;
+    for(var i=0;i<ths.length;i++){
+      (function(idx){
+        var th=ths[idx];
+        var ar=document.createElement('span'); ar.className='arw'; th.appendChild(ar);
+        th.addEventListener('click',function(){ sortBy(table, idx, th); });
+      })(i);
+    }
+  });
+})();
+</script>
 </body>
 </html>

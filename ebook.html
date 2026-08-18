@@ -3,11 +3,11 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Tentang · AJOINVEST</title>
-<meta name="description" content="Tentang AJOINVEST: investor ritel & swing trader yang fokus pada bandarmology dan aliran dana asing IDX.">
+<title>Ebook · AJOINVEST</title>
+<meta name="description" content="Ebook panduan membaca aliran dana asing IDX untuk investor ritel, oleh AJOINVEST.">
 <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='7' fill='%231c1b19'/><path d='M6 22 L13 14 L18 18 L26 9' stroke='%23e8821e' stroke-width='3' fill='none' stroke-linecap='round' stroke-linejoin='round'/></svg>">
 <style>
-/* ===== Tema AJOINVEST, Light / Brand IG (charcoal + beige + oranye) ===== */
+/* ===== Tema AJOINVEST — Light / Brand IG (charcoal + beige + oranye) ===== */
 :root{
   --bg:#f7f3ea; --bg2:#f1ebdd; --card:#ffffff; --line:#e7dfcd;
   --ink:#1f1c17; --mut:#7c746a;
@@ -28,7 +28,7 @@ a{color:var(--orange-d);text-decoration:none}
 a:hover{text-decoration:underline}
 .wrap{max-width:960px;margin:0 auto;padding:0 20px}
 
-/* Nav, bar charcoal gelap */
+/* Nav — bar charcoal gelap */
 .nav{position:sticky;top:0;z-index:10;background:var(--dark);border-bottom:1px solid #2c2a26}
 .nav .wrap{display:flex;align-items:center;justify-content:space-between;height:60px}
 .brand{font-weight:800;letter-spacing:.5px;font-size:17px;color:var(--dark-txt)}
@@ -77,6 +77,10 @@ tr:last-child td{border-bottom:none}
 .ratio{font-weight:700;color:var(--buy)}
 .bar{height:4px;background:#ece4d2;border-radius:3px;margin-top:5px;overflow:hidden}
 .bar span{display:block;height:100%;border-radius:3px}
+/* Kolom Net Foreign Value TANPA bar. Bar hanya di kolom Rasio B/S: */
+/* Bar proporsi beli vs jual (hijau=beli, merah=jual) */
+.rbar{width:84px;height:6px;border-radius:4px;overflow:hidden;margin:5px 0 0 auto;background:var(--sell)}
+.rbar b{display:block;height:100%;background:var(--buy);border-radius:4px 0 0 4px}
 .pill{font-size:11px;color:#15803d;background:#dcfce7;border:1px solid #bbf7d0;
   padding:2px 8px;border-radius:20px;white-space:nowrap}
 .pill.sell{color:#b91c1c;background:#fee2e2;border-color:#fecaca}
@@ -112,6 +116,27 @@ footer .social a{color:var(--orange-d)}
   .nav ul{gap:14px}
   .avgcol{display:none}
 }
+
+/* ===== Halaman Ebook ===== */
+.ebkhero{display:grid;grid-template-columns:250px 1fr;gap:32px;align-items:center;padding:24px 0 8px}
+.cover{aspect-ratio:3/4;border-radius:12px;background:linear-gradient(150deg,#1c1b19,#34302a);
+  border:1px solid #2c2a26;box-shadow:0 16px 36px rgba(0,0,0,.28);
+  display:flex;flex-direction:column;justify-content:space-between;padding:22px;color:#efe7d6;position:relative;overflow:hidden}
+.cover::after{content:"";position:absolute;left:-20%;bottom:30%;width:140%;height:3px;background:#e8821e;transform:rotate(-8deg)}
+.cover .kick{font-size:11px;letter-spacing:2px;text-transform:uppercase;color:#e8821e;font-weight:700}
+.cover .ct{font-size:22px;font-weight:800;line-height:1.2}
+.cover .cby{font-size:12px;color:#b7ad9a}
+.price{font-size:30px;font-weight:800;color:var(--ink);margin:6px 0 2px}
+.price small{font-size:15px;color:var(--mut);font-weight:600;text-decoration:line-through;margin-left:8px}
+.muted{color:var(--mut);font-size:13px}
+.check{list-style:none;padding:0;margin:10px 0 0}
+.check li{position:relative;padding-left:26px;margin-bottom:10px;color:var(--ink)}
+.check li::before{content:"\2713";position:absolute;left:0;top:0;color:#16a34a;font-weight:800}
+.btn.big{font-size:16px;padding:13px 26px}
+.cta-band{background:linear-gradient(180deg,#fff,#fdf3e6);border:1px solid #f0cfa0;border-radius:16px;
+  padding:26px;text-align:center;margin-top:10px}
+@media(max-width:620px){.ebkhero{grid-template-columns:1fr;gap:20px}.cover{max-width:230px;margin:0 auto}}
+
 </style>
 </head>
 <body>
@@ -122,61 +147,69 @@ footer .social a{color:var(--orange-d)}
     <li><a href="index.html">Beranda</a></li>
     <li><a href="screening.html">Screening Harian</a></li>
     <li><a href="blog.html">Blog</a></li>
-    <li><a href="ebook.html">Ebook</a></li>
-    <li><a href="about.html" class="active">Tentang</a></li>
+    <li><a href="ebook.html" class="active">Ebook</a></li>
+    <li><a href="about.html">Tentang</a></li>
   </ul>
 </div></nav>
 
-<header class="hero"><div class="wrap" style="max-width:720px">
-  <h1>Halo, saya <span>AJOINVEST</span>.</h1>
-  <p class="lead">Investor ritel dan swing trader yang membaca pasar lewat <b>bandarmology</b> dan <b>aliran dana asing</b>. Saya percaya harga jarang bergerak tanpa alasan, dan sebagian besar alasannya bisa dilacak dari siapa yang sedang mengumpulkan barang.</p>
-  <div class="factrow">
-    <span class="fact">📊 Fokus: dana asing &amp; broker summary</span>
-    <span class="fact">🎯 Gaya: swing trading</span>
-    <span class="fact">🇮🇩 Pasar: IDX / BEI</span>
-    <span class="fact">📖 Berbagi terbuka untuk ritel</span>
-  </div>
-</div></header>
+<section><div class="wrap">
 
-<section><div class="wrap"><div class="article">
+  <!-- ============================================================
+       YANG PERLU KAMU GANTI (cari 3 tanda ini):
+       1) JUDUL EBOOK      -> ganti teks judul di cover & di h1
+       2) HARGA            -> ganti angka di bagian .price
+       3) LINK CHECKOUT    -> ganti "GANTI-DENGAN-LINK-CHECKOUT"
+                              dengan link Mayar/Lynk/Gumroad kamu
+       ============================================================ -->
 
-  <h2>Kenapa saya fokus ke aliran dana asing</h2>
-  <p>Sebagai investor ritel, saya sadar saya tidak punya informasi sebanyak institusi besar. Yang bisa saya lakukan adalah <b>membaca jejak mereka</b>. Setiap hari, investor asing dan broker besar meninggalkan pola di data transaksi, berapa yang mereka beli, berapa yang mereka lepas, dan pada harga berapa. Buat saya, itu petunjuk yang jauh lebih jujur daripada rumor di grup.</p>
-  <p>Tapi angka mentah gampang menyesatkan. Nilai beli bersih yang besar belum tentu berarti akumulasi kuat, bisa saja saham itu memang ramai. Karena itu saya membangun cara membaca sendiri: bukan cuma "berapa nilainya", tapi <b>seberapa besar beli asing dibanding jualnya</b>, lalu disaring dengan besaran nilai supaya saham tipis tidak salah terbaca sebagai sinyal.</p>
-
-  <h2>Apa yang saya kerjakan di sini</h2>
-  <div class="card">
-    <h3>1 · Screening akumulasi asing harian</h3>
-    <p>Tiap hari bursa, saya olah data Foreign Transaction (Sesi 1) menjadi daftar saham dengan pembelian asing terkuat, dikelompokkan jadi Highlight (beli kuat &amp; nilai besar) dan Radar (beli sangat kuat tapi nilai masih kecil, kandidat awal).</p>
-  </div>
-  <div class="card">
-    <h3>2 · Catatan &amp; edukasi</h3>
-    <p>Di blog, saya jelaskan cara membaca datanya supaya Anda tidak sekadar ikut angka, tapi paham logikanya. Tujuan saya bukan memberi sinyal, tapi membuat Anda bisa menyaring sendiri.</p>
-  </div>
-  <div class="card">
-    <h3>3 · Metode yang terbuka</h3>
-    <p>Semua rumus dan ambang batas yang saya pakai saya tulis apa adanya. Anda boleh setuju, boleh tidak, boleh mengubahnya untuk gaya Anda sendiri.</p>
+  <div class="ebkhero">
+    <div class="cover">
+      <div class="kick">Ebook</div>
+      <div class="ct">Membaca Aliran<br>Dana Asing IDX</div>
+      <div class="cby">oleh AJOINVEST</div>
+    </div>
+    <div>
+      <h1 style="font-size:30px;margin:0 0 10px">Membaca Aliran Dana Asing IDX untuk Investor Ritel</h1>
+      <p class="muted" style="font-size:15px;margin:0 0 14px">Rangkuman lengkap metode yang saya pakai tiap hari: cara membaca dana asing, memakai rasio beli vs jual, dan menyaring saham tanpa terjebak angka besar yang menyesatkan.</p>
+      <div class="price">Rp 99.000 <small>Rp 149.000</small></div>
+      <p class="muted" style="margin:0 0 16px">Format PDF, dikirim otomatis setelah pembayaran.</p>
+      <a href="GANTI-DENGAN-LINK-CHECKOUT" class="btn big">Beli Sekarang &rarr;</a>
+      <a href="https://www.instagram.com/ajo.invest" target="_blank" rel="noopener" class="btn ghost">Tanya via Instagram</a>
+    </div>
   </div>
 
-  <h2>Prinsip yang saya pegang</h2>
-  <ul>
-    <li><b>Jujur soal keterbatasan.</b> Data asing adalah petunjuk, bukan ramalan. Saya bisa salah, dan saya tidak menutupinya.</li>
-    <li><b>Proses di atas sinyal.</b> Lebih penting Anda paham cara berpikirnya daripada sekadar meniru daftar saham.</li>
-    <li><b>Bukan penasihat keuangan.</b> Semua yang saya bagikan adalah catatan pribadi untuk edukasi, bukan ajakan membeli atau menjual.</li>
+</div></section>
+
+<section><div class="wrap" style="max-width:760px">
+  <h2 class="section">Apa yang kamu dapat</h2>
+  <ul class="check">
+    <li>Cara membaca net foreign buy dan kenapa nilai bersih saja bisa menyesatkan.</li>
+    <li>Konsep rasio beli vs jual asing untuk mengukur keyakinan, bukan cuma besaran.</li>
+    <li>Dua saringan yang saya pakai: kekuatan akumulasi + materialitas nilai.</li>
+    <li>Cara membedakan akumulasi sejati dari saham yang sekadar ramai.</li>
+    <li>Kesalahan umum pemula saat membaca dana asing, dan cara menghindarinya.</li>
+    <li>Contoh nyata langkah demi langkah dari data harian.</li>
   </ul>
+</div></section>
 
-  <div class="note">
-    Catatan penting: Saya bukan penasihat keuangan berlisensi. Seluruh konten di AJOINVEST bersifat edukasi dan merupakan opini pribadi, <b>bukan rekomendasi jual/beli</b>. Keputusan investasi sepenuhnya tanggung jawab Anda sendiri.
+<section><div class="wrap" style="max-width:760px">
+  <h2 class="section">Untuk siapa ebook ini</h2>
+  <ul class="check">
+    <li>Investor ritel yang ingin punya cara baca yang sistematis, bukan ikut-ikutan.</li>
+    <li>Pemula yang sering bingung mengartikan angka dana asing.</li>
+    <li>Swing trader yang mau menyaring kandidat lebih cepat tiap hari.</li>
+  </ul>
+  <p class="muted" style="margin-top:14px">Catatan jujur: ini bukan jaminan cuan atau sinyal beli. Isinya cara berpikir dan metode, supaya kamu bisa menilai sendiri. Selebihnya, keputusan tetap di tanganmu.</p>
+</div></section>
+
+<section><div class="wrap" style="max-width:760px">
+  <div class="cta-band">
+    <h3 style="margin:0 0 6px;font-size:20px">Siap mulai membaca dana asing dengan lebih percaya diri?</h3>
+    <p class="muted" style="margin:0 0 16px">Format PDF, sekali beli, bisa dibaca kapan saja.</p>
+    <a href="GANTI-DENGAN-LINK-CHECKOUT" class="btn big">Beli Ebook Sekarang &rarr;</a>
   </div>
-
-  <h2>Ngobrol yuk</h2>
-  <p>Kalau Anda sesama investor ritel yang tertarik bandarmology, atau punya pertanyaan soal metode saya, saya senang berdiskusi.</p>
-  <p>
-    <a href="https://www.instagram.com/ajo.invest" target="_blank" rel="noopener" class="btn">DM di Instagram</a>
-    <a href="screening.html" class="btn ghost">Lihat screening hari ini</a>
-  </p>
-
-</div></div></section>
+  <p class="muted" style="margin-top:18px;text-align:center">Bukan rekomendasi jual/beli. Konten untuk edukasi. Ditulis oleh <a href="about.html">AJOINVEST</a>.</p>
+</div></section>
 
 <footer><div class="wrap">
   <div class="social">

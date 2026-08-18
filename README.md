@@ -19,10 +19,8 @@ supaya upload ke GitHub tidak pernah gagal karena file terpisah. File
 2. Ganti file `screening.html` di repo ini (Edit → paste → Commit).
 3. Situs otomatis ter-update dalam 1–2 menit.
 
-## Yang masih perlu Anda isi sendiri
-Cari dan ganti hal-hal ini di semua file `.html`:
-- `email@anda.com` → alamat email Anda
-- Tautan Instagram / X di footer (`href="#"`) → link akun Anda
+## Personalisasi
+- Instagram sudah terpasang di footer: https://www.instagram.com/ajo.invest
 - (Opsional) Nama asli di `about.html` jika ingin lebih personal
 
 Bukan rekomendasi jual/beli. Konten untuk edukasi.
