@@ -92,46 +92,49 @@ footer .social a{color:var(--orange-d)}
   <p>Nama-nama sahamnya berubah, tahunnya berubah, alasannya selalu terdengar baru, tapi bentuk grafiknya sering terasa seperti pernah saya lihat sebelumnya. Waktu masih awal, saya sempat mengira setiap kenaikan adalah awal dari "bulan madu" yang panjang, dan setiap penurunan adalah akhir dari segalanya. Butuh beberapa kali kena untuk sadar bahwa yang saya alami bukan kejadian acak, tapi bagian dari sebuah siklus yang punya empat babak. Begitu saya bisa mengenali babak-babak itu, cara saya membaca pasar berubah total.</p>
 
   <figure>
-    <svg viewBox="0 0 700 340" role="img" aria-label="Ilustrasi empat fase market cycle">
+    <svg viewBox="0 0 820 380" role="img" aria-label="Ilustrasi market cycle dan emosi investor dari Hope sampai Disbelief">
       <!-- zona fase (band bawah) -->
-      <rect x="40"  y="292" width="150" height="22" fill="#16a34a" opacity="0.14"/>
-      <rect x="190" y="292" width="180" height="22" fill="#e8821e" opacity="0.16"/>
-      <rect x="370" y="292" width="130" height="22" fill="#dc2626" opacity="0.14"/>
-      <rect x="500" y="292" width="160" height="22" fill="#1c1b19" opacity="0.12"/>
-      <text x="115" y="307" text-anchor="middle" font-size="12" font-weight="700" fill="#15803d">Akumulasi</text>
-      <text x="280" y="307" text-anchor="middle" font-size="12" font-weight="700" fill="#c96f12">Partisipasi</text>
-      <text x="435" y="307" text-anchor="middle" font-size="12" font-weight="700" fill="#b91c1c">Distribusi</text>
-      <text x="580" y="307" text-anchor="middle" font-size="12" font-weight="700" fill="#4b453d">Penurunan</text>
+      <rect x="60"  y="332" width="155" height="24" rx="3" fill="#16a34a" opacity="0.14"/>
+      <rect x="215" y="332" width="210" height="24" rx="3" fill="#e8821e" opacity="0.16"/>
+      <rect x="425" y="332" width="135" height="24" rx="3" fill="#dc2626" opacity="0.14"/>
+      <rect x="560" y="332" width="230" height="24" rx="3" fill="#1c1b19" opacity="0.12"/>
+      <text x="137" y="348" text-anchor="middle" font-size="12" font-weight="700" fill="#15803d">Akumulasi</text>
+      <text x="320" y="348" text-anchor="middle" font-size="12" font-weight="700" fill="#c96f12">Partisipasi</text>
+      <text x="492" y="348" text-anchor="middle" font-size="12" font-weight="700" fill="#b91c1c">Distribusi</text>
+      <text x="675" y="348" text-anchor="middle" font-size="12" font-weight="700" fill="#4b453d">Penurunan</text>
 
       <!-- garis pemisah fase -->
       <g stroke="#e7dfcd" stroke-width="1" stroke-dasharray="4 4">
-        <line x1="190" y1="30" x2="190" y2="288"/>
-        <line x1="370" y1="30" x2="370" y2="288"/>
-        <line x1="500" y1="30" x2="500" y2="288"/>
+        <line x1="215" y1="34" x2="215" y2="328"/>
+        <line x1="425" y1="34" x2="425" y2="328"/>
+        <line x1="560" y1="34" x2="560" y2="328"/>
       </g>
 
       <!-- area di bawah kurva -->
-      <path d="M40,248 C90,244 140,250 190,238 C260,220 320,140 370,95 C400,70 470,70 500,95 C540,130 610,220 660,242 L660,288 L40,288 Z" fill="#e8821e" opacity="0.07"/>
+      <path d="M70,300 L70,288 C85.0,285.3 130.0,282.7 160.0,272.0 C190.0,261.3 216.7,247.3 250.0,224.0 C283.3,200.7 323.3,156.0 360.0,132.0 C396.7,108.0 438.7,84.0 470.0,80.0 C501.3,76.0 526.0,95.0 548.0,108.0 C570.0,121.0 585.3,152.7 602.0,158.0 C618.7,163.3 633.0,131.7 648.0,140.0 C663.0,148.3 677.5,188.7 692.0,208.0 C706.5,227.3 720.7,247.0 735.0,256.0 C749.3,265.0 770.8,261.0 778.0,262.0 L778,300 Z" fill="#e8821e" opacity="0.07"/>
       <!-- kurva siklus -->
-      <path d="M40,248 C90,244 140,250 190,238 C260,220 320,140 370,95 C400,70 470,70 500,95 C540,130 610,220 660,242"
-            fill="none" stroke="#e8821e" stroke-width="3" stroke-linecap="round"/>
+      <path d="M70,288 C85.0,285.3 130.0,282.7 160.0,272.0 C190.0,261.3 216.7,247.3 250.0,224.0 C283.3,200.7 323.3,156.0 360.0,132.0 C396.7,108.0 438.7,84.0 470.0,80.0 C501.3,76.0 526.0,95.0 548.0,108.0 C570.0,121.0 585.3,152.7 602.0,158.0 C618.7,163.3 633.0,131.7 648.0,140.0 C663.0,148.3 677.5,188.7 692.0,208.0 C706.5,227.3 720.7,247.0 735.0,256.0 C749.3,265.0 770.8,261.0 778.0,262.0"
+            fill="none" stroke="#e8821e" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
 
-      <!-- titik & label emosi -->
-      <g font-size="12" fill="#7c746a">
-        <circle cx="115" cy="247" r="3.5" fill="#16a34a"/>
-        <text x="115" y="272" text-anchor="middle">Ragu</text>
-        <circle cx="300" cy="175" r="3.5" fill="#e8821e"/>
-        <text x="292" y="163" text-anchor="middle">Percaya diri</text>
-        <circle cx="435" cy="73" r="3.5" fill="#dc2626"/>
-        <text x="435" y="56" text-anchor="middle" font-weight="700" fill="#b91c1c">Euforia</text>
-        <circle cx="560" cy="178" r="3.5" fill="#7c746a"/>
-        <text x="572" y="166" text-anchor="middle">Panik</text>
-        <circle cx="645" cy="240" r="3.5" fill="#7c746a"/>
-        <text x="638" y="262" text-anchor="middle">Menyerah</text>
+      <!-- titik & label emosi (tepat di kurva) -->
+      <g>
+        <circle cx="70" cy="288" r="4" fill="#16a34a"/><text x="70" y="310" text-anchor="middle" font-size="11.5" fill="#7c746a">Hope</text>
+        <circle cx="160" cy="272" r="4" fill="#16a34a"/><text x="160" y="294" text-anchor="middle" font-size="11.5" fill="#7c746a">Optimism</text>
+        <circle cx="250" cy="224" r="4" fill="#16a34a"/><text x="250" y="210" text-anchor="middle" font-size="11.5" fill="#7c746a">Belief</text>
+        <circle cx="360" cy="132" r="4" fill="#16a34a"/><text x="360" y="118" text-anchor="middle" font-size="11.5" fill="#7c746a">Thrill</text>
+        <circle cx="470" cy="80" r="4" fill="#dc2626"/><text x="470" y="64" text-anchor="middle" font-size="11.5" fill="#dc2626" font-weight="700">Euphoria</text>
+        <circle cx="548" cy="108" r="4" fill="#e8821e"/><text x="548" y="130" text-anchor="middle" font-size="11.5" fill="#7c746a">Complacency</text>
+        <circle cx="602" cy="158" r="4" fill="#e8821e"/><text x="602" y="144" text-anchor="middle" font-size="11.5" fill="#7c746a">Anxiety</text>
+        <circle cx="648" cy="140" r="4" fill="#e8821e"/><text x="648" y="162" text-anchor="middle" font-size="11.5" fill="#7c746a">Denial</text>
+        <circle cx="692" cy="208" r="4" fill="#7c746a"/><text x="692" y="194" text-anchor="middle" font-size="11.5" fill="#7c746a">Panic</text>
+        <circle cx="735" cy="256" r="4" fill="#7c746a"/><text x="735" y="278" text-anchor="middle" font-size="11.5" fill="#7c746a">Capitulation</text>
+        <circle cx="778" cy="262" r="4" fill="#7c746a"/><text x="778" y="248" text-anchor="middle" font-size="11.5" fill="#7c746a">Disbelief</text>
       </g>
     </svg>
-    <figcaption>Ilustrasi empat fase market cycle dan emosi yang biasanya menyertainya. Bentuk kurva disederhanakan untuk penjelasan.</figcaption>
+    <figcaption>Ilustrasi siklus pasar dan emosi yang biasanya menyertainya, dari Hope sampai Disbelief. Bentuk kurva disederhanakan untuk penjelasan.</figcaption>
   </figure>
+
+  <p>Kalau diperhatikan, tiap fase punya "suasana emosi" yang khas. Dimulai dari harapan tipis (Hope) saat pasar masih sepi, tumbuh jadi optimisme dan keyakinan (Optimism, Belief), memuncak di euforia (Euphoria) tepat ketika risiko justru paling besar, lalu berbalik lewat kecemasan dan penyangkalan (Anxiety, Denial), sampai kepanikan dan penyerahan (Panic, Capitulation), dan berakhir di ketidakpercayaan (Disbelief) saat siklus baru diam-diam dimulai lagi. Nama emosinya boleh beda-beda, tapi urutannya nyaris selalu sama.</p>
 
   <h2>Babak 1: Akumulasi, saat sepi justru ramai di dalam</h2>
   <p>Ini fase paling membosankan sekaligus paling penting. Harga bergerak menyamping, berita sepi, dan mayoritas ritel sudah kehilangan minat karena "sahamnya nggak gerak-gerak". Padahal justru di sinilah pemain besar diam-diam mengumpulkan barang, pelan-pelan, tanpa bikin harga meledak. Buat saya, fase ini adalah alasan kenapa saya repot-repot membaca aliran dana asing. Akumulasi yang sesungguhnya sering terlihat di data jauh sebelum terlihat di harga.</p>
