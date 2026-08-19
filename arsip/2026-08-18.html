@@ -31,7 +31,8 @@ a:hover{text-decoration:underline}
 /* Nav, bar charcoal gelap */
 .nav{position:sticky;top:0;z-index:10;background:var(--dark);border-bottom:1px solid #2c2a26}
 .nav .wrap{display:flex;align-items:center;justify-content:space-between;height:60px}
-.brand{font-weight:800;letter-spacing:.5px;font-size:17px;color:var(--dark-txt)}
+.brand{font-weight:800;letter-spacing:.5px;font-size:17px;color:var(--dark-txt);text-decoration:none}
+.brand:hover{color:#fff;text-decoration:none}
 .brand span{color:var(--orange)}
 .nav ul{display:flex;gap:22px;list-style:none;margin:0;padding:0;font-size:14px}
 .nav a{color:#b7ad9a}
@@ -128,9 +129,8 @@ footer .social a{color:var(--orange-d)}
 </head>
 <body>
 <nav class="nav"><div class="wrap">
-  <div class="brand">AJO<span>INVEST</span></div>
+  <a href="../index.html" class="brand">AJO<span>INVEST</span></a>
   <ul>
-    <li><a href="../index.html">Beranda</a></li>
     <li><a href="../screening.html">Screening Harian</a></li>
     <li><a href="../blog.html">Blog</a></li>
     <li><a href="../ebook.html">Ebook</a></li>

@@ -1,189 +1,121 @@
 <!DOCTYPE html>
 <html lang="id">
 <head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Tentang · AJOINVEST</title>
-<meta name="description" content="Tentang AJOINVEST: investor ritel & swing trader yang fokus pada bandarmology dan aliran dana asing IDX.">
-<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='7' fill='%231c1b19'/><path d='M6 22 L13 14 L18 18 L26 9' stroke='%23e8821e' stroke-width='3' fill='none' stroke-linecap='round' stroke-linejoin='round'/></svg>">
+<meta name="description" content="Tentang Ajo, trader aktif IDX sejak 2021 yang fokus membaca pergerakan broker dan aliran dana asing. AJOINVEST membagikan screening Sesi 1 untuk bahan trading Sesi 2.">
 <style>
-/* ===== Tema AJOINVEST, Light / Brand IG (charcoal + beige + oranye) ===== */
-:root{
-  --bg:#f7f3ea; --bg2:#f1ebdd; --card:#ffffff; --line:#e7dfcd;
-  --ink:#1f1c17; --mut:#7c746a;
-  --tan:#cdbf9e; --tan-soft:#ece4d2;
-  --orange:#e8821e; --orange-d:#c96f12;
-  --dark:#1c1b19; --dark-txt:#efe7d6;
-  --buy:#16a34a; --sell:#dc2626;
-  --grn:#e8821e; --grn2:#c96f12; --accent:#e8821e;
-}
-*{box-sizing:border-box}
-html{scroll-behavior:smooth}
-body{
-  margin:0; color:var(--ink); background:var(--bg);
-  font-family:-apple-system,Segoe UI,Roboto,Arial,sans-serif; line-height:1.6;
-  min-height:100vh;
-}
-a{color:var(--orange-d);text-decoration:none}
-a:hover{text-decoration:underline}
-.wrap{max-width:960px;margin:0 auto;padding:0 20px}
-
-/* Nav, bar charcoal gelap */
-.nav{position:sticky;top:0;z-index:10;background:var(--dark);border-bottom:1px solid #2c2a26}
-.nav .wrap{display:flex;align-items:center;justify-content:space-between;height:60px}
-.brand{font-weight:800;letter-spacing:.5px;font-size:17px;color:var(--dark-txt);text-decoration:none}
-.brand:hover{color:#fff;text-decoration:none}
-.brand span{color:var(--orange)}
-.nav ul{display:flex;gap:22px;list-style:none;margin:0;padding:0;font-size:14px}
-.nav a{color:#b7ad9a}
-.nav a.active,.nav a:hover{color:#fff;text-decoration:none}
-
-/* Hero */
-.hero{padding:70px 0 40px;text-align:center}
-.hero h1{font-size:38px;margin:0 0 10px;line-height:1.2;color:var(--ink)}
-.hero h1 span{color:var(--orange)}
-.hero p{color:var(--mut);font-size:17px;max-width:620px;margin:0 auto 26px}
-.btn{display:inline-block;background:var(--orange);color:#fff;font-weight:700;
-  padding:11px 22px;border-radius:10px;font-size:15px;margin:4px}
-.btn:hover{text-decoration:none;filter:brightness(1.05)}
-.btn.ghost{background:transparent;color:var(--ink);border:1px solid #d8cfbc}
-
-/* Sections & cards */
-section{padding:34px 0}
-h2.section{font-size:22px;margin:0 0 18px;color:var(--ink)}
-.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:18px}
-.card{background:var(--card);border:1px solid var(--line);border-radius:14px;
-  padding:20px;box-shadow:0 6px 20px rgba(60,50,30,.06)}
-.card h3{margin:0 0 8px;font-size:16px;color:var(--ink)}
-.card p{margin:0;color:var(--mut);font-size:14px}
-.tag{display:inline-block;font-size:11px;color:#8a5a12;background:var(--tan-soft);
-  border:1px solid #ddd0b3;padding:2px 9px;border-radius:20px;margin-bottom:10px}
-
-/* About / lead */
-.lead{font-size:16px;color:var(--ink)}
-.lead b{color:#000}
-.factrow{display:flex;flex-wrap:wrap;gap:10px;margin:14px 0 0}
-.fact{font-size:12px;color:#6b5a3a;background:var(--tan-soft);border:1px solid #ddd0b3;
-  padding:4px 11px;border-radius:20px}
-
-/* Screening table */
-.legend{font-size:13px;color:var(--mut);margin:0 0 20px;line-height:1.6}
-table{width:100%;border-collapse:collapse;font-size:13px}
-th{text-align:left;color:var(--mut);font-weight:600;font-size:11px;text-transform:uppercase;
-  letter-spacing:.5px;padding:6px 10px;border-bottom:1px solid var(--line)}
-td{padding:9px 10px;border-bottom:1px solid var(--line)}
-tr:last-child td{border-bottom:none}
-.rank{color:var(--mut);width:26px}.code{font-weight:700;letter-spacing:.5px;color:var(--ink)}
-.num{text-align:right;font-variant-numeric:tabular-nums}
-.ratio{font-weight:700;color:var(--buy)}
-.bar{height:4px;background:#ece4d2;border-radius:3px;margin-top:5px;overflow:hidden}
-.bar span{display:block;height:100%;border-radius:3px}
-.pill{font-size:11px;color:#15803d;background:#dcfce7;border:1px solid #bbf7d0;
-  padding:2px 8px;border-radius:20px;white-space:nowrap}
-.pill.sell{color:#b91c1c;background:#fee2e2;border-color:#fecaca}
-
-/* Blog */
-.post{border-bottom:1px solid var(--line);padding:20px 0}
-.post:last-child{border-bottom:none}
-.post h3{margin:0 0 6px;font-size:19px}
-.post h3 a{color:var(--ink)}
-.post .meta{color:var(--mut);font-size:12px;margin-bottom:8px}
-.article{max-width:720px;margin:0 auto}
-.article h1{font-size:30px;margin:10px 0 6px;color:var(--ink)}
-.article h2{font-size:20px;margin:28px 0 8px;color:var(--ink)}
-.article .meta{color:var(--mut);font-size:13px;margin-bottom:24px}
-.article p{margin:0 0 16px}
-.article ul{margin:0 0 16px;padding-left:20px;color:var(--ink)}
-.article li{margin-bottom:6px}
-.note{background:var(--tan-soft);border:1px solid #ddd0b3;border-left:3px solid var(--orange);
-  border-radius:8px;padding:14px 16px;color:#6b5a3a;font-size:14px;margin:0 0 16px}
-
-/* Tabel di dalam artikel */
-.article table th{font-size:12px}
-.article table td{padding:9px 10px}
-
-/* Footer */
-footer{border-top:1px solid var(--line);margin-top:40px;padding:26px 0;
-  color:var(--mut);font-size:13px;text-align:center}
-footer .social{margin-bottom:10px;display:flex;gap:16px;justify-content:center;flex-wrap:wrap}
-footer .social a{color:var(--orange-d)}
-
-@media(max-width:560px){
-  .hero h1{font-size:30px}
-  .nav ul{gap:14px}
-  .avgcol{display:none}
-}
+  :root{
+    --bg:#f7f3ea; --card:#fff; --line:#e7dfcd; --ink:#1f1c17; --mut:#7c746a;
+    --tan:#cdbf9e; --orange:#e8821e; --orange-d:#c96f12; --dark:#1c1b19;
+    --beli:#16a34a; --jual:#dc2626;
+  }
+  *{box-sizing:border-box}
+  html,body{margin:0;padding:0}
+  body{
+    background:var(--bg); color:var(--ink);
+    font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+    line-height:1.7; -webkit-font-smoothing:antialiased;
+  }
+  a{color:var(--orange-d)}
+  /* NAV */
+  nav{
+    background:var(--dark); display:flex; align-items:center; justify-content:space-between;
+    padding:14px 22px; flex-wrap:wrap; gap:10px;
+  }
+  .brand{font-weight:800; font-size:20px; letter-spacing:.5px; text-decoration:none}
+  .brand:hover{color:#fff; text-decoration:none}
+  .brand .a{color:#efe6d3}
+  .brand .b{color:var(--orange)}
+  .menu{display:flex; gap:20px; flex-wrap:wrap}
+  .menu a{color:#d8d0c2; text-decoration:none; font-size:15px}
+  .menu a:hover{color:#fff}
+  .menu a.active{color:var(--orange)}
+  /* LAYOUT */
+  .wrap{max-width:760px; margin:0 auto; padding:40px 22px 60px}
+  .kicker{color:var(--orange-d); font-weight:700; letter-spacing:1px; text-transform:uppercase; font-size:13px; margin:0 0 6px}
+  h1{font-size:34px; line-height:1.2; margin:0 0 6px}
+  .lead{font-size:19px; color:var(--mut); font-style:italic; margin:0 0 8px}
+  h2{font-size:21px; margin:34px 0 8px; color:var(--ink)}
+  p{margin:0 0 16px}
+  .card{
+    background:var(--card); border:1px solid var(--line); border-radius:14px;
+    padding:22px 24px; margin:22px 0;
+  }
+  .note{background:#fbf7ee; border-left:4px solid var(--orange); border-radius:8px; padding:16px 18px; margin:22px 0}
+  .note b{color:var(--orange-d)}
+  .disc{font-size:14px; color:var(--mut); background:#f1ebde; border:1px dashed var(--tan); border-radius:12px; padding:16px 18px; margin:26px 0}
+  .cta{margin-top:30px}
+  .btn{
+    display:inline-block; background:var(--orange); color:#fff; text-decoration:none;
+    font-weight:700; padding:12px 22px; border-radius:10px;
+  }
+  .btn:hover{background:var(--orange-d); color:#fff}
+  .sign{font-style:italic; color:var(--mut); margin-top:24px}
+  /* FOOTER */
+  footer{border-top:1px solid var(--line); padding:26px 22px; text-align:center; color:var(--mut); font-size:14px}
+  footer a{color:var(--orange-d); text-decoration:none}
+  footer a:hover{text-decoration:underline}
+  @media(max-width:600px){
+    h1{font-size:27px}
+    .lead{font-size:17px}
+    .wrap{padding:28px 18px 48px}
+  }
 </style>
 </head>
 <body>
 
-<nav class="nav"><div class="wrap">
-  <a href="index.html" class="brand">AJO<span>INVEST</span></a>
-  <ul>
-    <li><a href="screening.html">Screening Harian</a></li>
-    <li><a href="blog.html">Blog</a></li>
-    <li><a href="ebook.html">Ebook</a></li>
-    <li><a href="about.html" class="active">Tentang</a></li>
-  </ul>
-</div></nav>
-
-<header class="hero"><div class="wrap" style="max-width:720px">
-  <h1>Halo, saya <span>AJOINVEST</span>.</h1>
-  <p class="lead">Investor ritel dan swing trader yang membaca pasar lewat <b>bandarmology</b> dan <b>aliran dana asing</b>. Saya percaya harga jarang bergerak tanpa alasan, dan sebagian besar alasannya bisa dilacak dari siapa yang sedang mengumpulkan barang.</p>
-  <div class="factrow">
-    <span class="fact">📊 Fokus: dana asing &amp; broker summary</span>
-    <span class="fact">🎯 Gaya: swing trading</span>
-    <span class="fact">🇮🇩 Pasar: IDX / BEI</span>
-    <span class="fact">📖 Berbagi terbuka untuk ritel</span>
+<nav>
+  <a href="index.html" class="brand"><span class="a">AJO</span><span class="b">INVEST</span></a>
+  <div class="menu">
+    <a href="screening.html">Screening Harian</a>
+    <a href="blog.html">Blog</a>
+    <a href="ebook.html">Ebook</a>
+    <a href="about.html" class="active">Tentang</a>
   </div>
-</div></header>
+</nav>
 
-<section><div class="wrap"><div class="article">
+<div class="wrap">
 
-  <h2>Kenapa saya fokus ke aliran dana asing</h2>
-  <p>Sebagai investor ritel, saya sadar saya tidak punya informasi sebanyak institusi besar. Yang bisa saya lakukan adalah <b>membaca jejak mereka</b>. Setiap hari, investor asing dan broker besar meninggalkan pola di data transaksi, berapa yang mereka beli, berapa yang mereka lepas, dan pada harga berapa. Buat saya, itu petunjuk yang jauh lebih jujur daripada rumor di grup.</p>
-  <p>Tapi angka mentah gampang menyesatkan. Nilai beli bersih yang besar belum tentu berarti akumulasi kuat, bisa saja saham itu memang ramai. Karena itu saya membangun cara membaca sendiri: bukan cuma "berapa nilainya", tapi <b>seberapa besar beli asing dibanding jualnya</b>, lalu disaring dengan besaran nilai supaya saham tipis tidak salah terbaca sebagai sinyal.</p>
+  <p class="kicker">Tentang</p>
+  <h1>Halo, saya Ajo.</h1>
+  <p class="lead">Trader aktif di Bursa Efek Indonesia sejak 2021.</p>
 
-  <h2>Apa yang saya kerjakan di sini</h2>
-  <div class="card">
-    <h3>1 · Screening akumulasi asing harian</h3>
-    <p>Tiap hari bursa, saya olah data Foreign Transaction (Sesi 1) menjadi daftar saham dengan pembelian asing terkuat, dikelompokkan jadi Highlight (beli kuat &amp; nilai besar) dan Radar (beli sangat kuat tapi nilai masih kecil, kandidat awal).</p>
-  </div>
-  <div class="card">
-    <h3>2 · Catatan &amp; edukasi</h3>
-    <p>Di blog, saya jelaskan cara membaca datanya supaya Anda tidak sekadar ikut angka, tapi paham logikanya. Tujuan saya bukan memberi sinyal, tapi membuat Anda bisa menyaring sendiri.</p>
-  </div>
-  <div class="card">
-    <h3>3 · Metode yang terbuka</h3>
-    <p>Semua rumus dan ambang batas yang saya pakai saya tulis apa adanya. Anda boleh setuju, boleh tidak, boleh mengubahnya untuk gaya Anda sendiri.</p>
-  </div>
+  <p>Perjalanan saya di pasar tidak dimulai dari satu metode tunggal, melainkan dari rasa penasaran yang terus tumbuh. Saya belajar membaca laporan keuangan, saya belajar membaca grafik, dan lama-lama saya sadar bahwa keduanya penting tapi belum cukup. Ada satu hal yang sering luput dari investor ritel seperti saya, yaitu ke mana arah uang besar bergerak.</p>
 
-  <h2>Prinsip yang saya pegang</h2>
-  <ul>
-    <li><b>Jujur soal keterbatasan.</b> Data asing adalah petunjuk, bukan ramalan. Saya bisa salah, dan saya tidak menutupinya.</li>
-    <li><b>Proses di atas sinyal.</b> Lebih penting Anda paham cara berpikirnya daripada sekadar meniru daftar saham.</li>
-    <li><b>Bukan penasihat keuangan.</b> Semua yang saya bagikan adalah catatan pribadi untuk edukasi, bukan ajakan membeli atau menjual.</li>
-  </ul>
+  <h2>Kenapa saya fokus ke pergerakan broker dan dana asing</h2>
+  <p>Saya jujur pada satu kenyataan: sebagai ritel, saya tidak punya akses ke data sebanyak institusi besar. Mereka punya tim riset, punya kecepatan, punya informasi yang tidak selalu sampai ke kita tepat waktu. Daripada melawan itu, saya memilih untuk mengikutinya. Membaca pergerakan broker dan aliran dana asing menjadi cara saya memahami volatilitas harga dalam jangka pendek, melihat siapa yang sedang mengumpulkan dan siapa yang sedang melepas. Buat saya, ini bukan soal meramal, tapi soal mengikuti jejak uang yang lebih besar.</p>
+
+  <h2>Cara saya bekerja</h2>
+  <p>Saya mengelola portofolio dengan dua wajah. Ada bagian untuk jangka panjang, tempat saya berinvestasi dengan sudut pandang fundamental. Ada juga bagian untuk jangka pendek, tempat saya trading dengan membaca teknikal dan pergerakan broker. Untuk trading harian, analisis broker inilah yang jadi andalan saya.</p>
+  <p>Saya juga pengguna MAIA, tools otomasi trading dari Mirae Asset. MAIA banyak membantu saya, terutama untuk gaya swing trading. Kalau ada teman-teman yang penasaran bagaimana saya memilih saham yang menarik untuk dijalankan di MAIA, silakan tanya, saya senang berbagi.</p>
+
+  <h2>Sedikit latar belakang</h2>
+  <p>Saya lulusan Teknik Sipil ITB. Mungkin terdengar jauh dari dunia pasar modal, tapi latar belakang teknik justru membentuk cara saya berpikir: sistematis, berbasis data, dan tidak mudah percaya pada asumsi tanpa bukti. Saat ini saya juga bekerja di salah satu perusahaan sekuritas, yang membuat saya semakin dekat dengan denyut pasar setiap hari.</p>
+
+  <h2>Kenapa AJOINVEST ada</h2>
+  <p>AJOINVEST lahir dari keinginan sederhana: membuat lapangan lebih rata untuk sesama ritel. Setiap hari bursa saya melakukan screening aliran dana asing, lalu membagikannya di sini, ditemani catatan dan edukasi dari apa yang saya pelajari di lapangan.</p>
 
   <div class="note">
-    Catatan penting: Saya bukan penasihat keuangan berlisensi. Seluruh konten di AJOINVEST bersifat edukasi dan merupakan opini pribadi, <b>bukan rekomendasi jual/beli</b>. Keputusan investasi sepenuhnya tanggung jawab Anda sendiri.
+    <p style="margin:0"><b>Perlu dicatat.</b> Screening yang saya bagikan di sini adalah <b>Screening Sesi 1</b>, yaitu berdasarkan data perdagangan sesi pagi, bukan screening harian penuh. Tujuannya supaya teman-teman punya bahan pertimbangan untuk trading di <b>Sesi 2</b> pada hari bursa yang sama. Jadi informasi ini paling relevan digunakan sebelum sesi siang dimulai.</p>
   </div>
 
-  <h2>Ngobrol yuk</h2>
-  <p>Kalau Anda sesama investor ritel yang tertarik bandarmology, atau punya pertanyaan soal metode saya, saya senang berdiskusi.</p>
-  <p>
-    <a href="https://www.instagram.com/ajo.invest" target="_blank" rel="noopener" class="btn">DM di Instagram</a>
-    <a href="screening.html" class="btn ghost">Lihat screening hari ini</a>
-  </p>
-
-</div></div></section>
-
-<footer><div class="wrap">
-  <div class="social">
-    <a href="https://www.instagram.com/ajo.invest" target="_blank" rel="noopener">Instagram</a>
+  <div class="disc">
+    <b>Catatan penting.</b> Saya bukan penasihat keuangan, dan semua yang saya bagikan di sini bukan rekomendasi jual atau beli. Ini murni untuk edukasi dan berbagi cara pandang. Setiap keputusan investasi tetap ada di tangan Anda, lengkap dengan risikonya. Pandangan yang saya tulis adalah pandangan pribadi, bukan mewakili institusi tempat saya bekerja.
   </div>
-  © 2026 AJOINVEST · Bukan rekomendasi jual/beli. Konten untuk edukasi.
-</div></footer>
+
+  <p class="sign">Mari belajar dan bertumbuh bersama di pasar.</p>
+
+  <div class="cta">
+    <a class="btn" href="https://www.instagram.com/ajo.invest" target="_blank" rel="noopener">Ikuti di Instagram</a>
+  </div>
+
+</div>
+
+<footer>
+  AJOINVEST · <a href="https://www.instagram.com/ajo.invest" target="_blank" rel="noopener">@ajo.invest</a>
+</footer>
 
 </body>
 </html>
