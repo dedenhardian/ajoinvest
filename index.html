@@ -4,244 +4,92 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <title>AJOINVEST · Aliran Dana Asing & Bandarmology IDX</title>
-<meta name="description" content="Screening akumulasi asing harian IDX dan catatan bandarmology oleh AJOINVEST. Bukan rekomendasi jual/beli, untuk edukasi.">
-<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='7' fill='%231c1b19'/><path d='M6 22 L13 14 L18 18 L26 9' stroke='%23e8821e' stroke-width='3' fill='none' stroke-linecap='round' stroke-linejoin='round'/></svg>">
-<style>
-/* ===== Tema AJOINVEST, Light / Brand IG (charcoal + beige + oranye) ===== */
-:root{
-  --bg:#f7f3ea; --bg2:#f1ebdd; --card:#ffffff; --line:#e7dfcd;
-  --ink:#1f1c17; --mut:#7c746a;
-  --tan:#cdbf9e; --tan-soft:#ece4d2;
-  --orange:#e8821e; --orange-d:#c96f12;
-  --dark:#1c1b19; --dark-txt:#efe7d6;
-  --buy:#16a34a; --sell:#dc2626;
-  --grn:#e8821e; --grn2:#c96f12; --accent:#e8821e;
-}
-*{box-sizing:border-box}
-html{scroll-behavior:smooth}
-body{
-  margin:0; color:var(--ink); background:var(--bg);
-  font-family:-apple-system,Segoe UI,Roboto,Arial,sans-serif; line-height:1.6;
-  min-height:100vh;
-}
-a{color:var(--orange-d);text-decoration:none}
-a:hover{text-decoration:underline}
-.wrap{max-width:960px;margin:0 auto;padding:0 20px}
-
-/* Nav, bar charcoal gelap */
-.nav{position:sticky;top:0;z-index:10;background:var(--dark);border-bottom:1px solid #2c2a26}
-.nav .wrap{display:flex;align-items:center;justify-content:space-between;height:60px}
-.brand{font-weight:800;letter-spacing:.5px;font-size:17px;color:var(--dark-txt);text-decoration:none}
-.brand:hover{color:#fff;text-decoration:none}
-.brand span{color:var(--orange)}
-.nav ul{display:flex;gap:22px;list-style:none;margin:0;padding:0;font-size:14px}
-.nav a{color:#b7ad9a}
-.nav a.active,.nav a:hover{color:#fff;text-decoration:none}
-
-/* Hero */
-.hero{padding:70px 0 40px;text-align:center}
-.hero h1{font-size:38px;margin:0 0 10px;line-height:1.2;color:var(--ink)}
-.hero h1 span{color:var(--orange)}
-.hero p{color:var(--mut);font-size:17px;max-width:620px;margin:0 auto 26px}
-.btn{display:inline-block;background:var(--orange);color:#fff;font-weight:700;
-  padding:11px 22px;border-radius:10px;font-size:15px;margin:4px}
-.btn:hover{text-decoration:none;filter:brightness(1.05)}
-.btn.ghost{background:transparent;color:var(--ink);border:1px solid #d8cfbc}
-
-/* Sections & cards */
-section{padding:34px 0}
-h2.section{font-size:22px;margin:0 0 18px;color:var(--ink)}
-.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:18px}
-.card{background:var(--card);border:1px solid var(--line);border-radius:14px;
-  padding:20px;box-shadow:0 6px 20px rgba(60,50,30,.06)}
-.card h3{margin:0 0 8px;font-size:16px;color:var(--ink)}
-.card p{margin:0;color:var(--mut);font-size:14px}
-.tag{display:inline-block;font-size:11px;color:#8a5a12;background:var(--tan-soft);
-  border:1px solid #ddd0b3;padding:2px 9px;border-radius:20px;margin-bottom:10px}
-
-/* About / lead */
-.lead{font-size:16px;color:var(--ink)}
-.lead b{color:#000}
-.factrow{display:flex;flex-wrap:wrap;gap:10px;margin:14px 0 0}
-.fact{font-size:12px;color:#6b5a3a;background:var(--tan-soft);border:1px solid #ddd0b3;
-  padding:4px 11px;border-radius:20px}
-
-/* Screening table */
-.legend{font-size:13px;color:var(--mut);margin:0 0 20px;line-height:1.6}
-table{width:100%;border-collapse:collapse;font-size:13px}
-th{text-align:left;color:var(--mut);font-weight:600;font-size:11px;text-transform:uppercase;
-  letter-spacing:.5px;padding:6px 10px;border-bottom:1px solid var(--line)}
-td{padding:9px 10px;border-bottom:1px solid var(--line)}
-tr:last-child td{border-bottom:none}
-.rank{color:var(--mut);width:26px}.code{font-weight:700;letter-spacing:.5px;color:var(--ink)}
-.num{text-align:right;font-variant-numeric:tabular-nums}
-.ratio{font-weight:700;color:var(--buy)}
-.bar{height:4px;background:#ece4d2;border-radius:3px;margin-top:5px;overflow:hidden}
-.bar span{display:block;height:100%;border-radius:3px}
-.pill{font-size:11px;color:#15803d;background:#dcfce7;border:1px solid #bbf7d0;
-  padding:2px 8px;border-radius:20px;white-space:nowrap}
-.pill.sell{color:#b91c1c;background:#fee2e2;border-color:#fecaca}
-
-/* Blog */
-.post{border-bottom:1px solid var(--line);padding:20px 0}
-.post:last-child{border-bottom:none}
-.post h3{margin:0 0 6px;font-size:19px}
-.post h3 a{color:var(--ink)}
-.post .meta{color:var(--mut);font-size:12px;margin-bottom:8px}
-.article{max-width:720px;margin:0 auto}
-.article h1{font-size:30px;margin:10px 0 6px;color:var(--ink)}
-.article h2{font-size:20px;margin:28px 0 8px;color:var(--ink)}
-.article .meta{color:var(--mut);font-size:13px;margin-bottom:24px}
-.article p{margin:0 0 16px}
-.article ul{margin:0 0 16px;padding-left:20px;color:var(--ink)}
-.article li{margin-bottom:6px}
-.note{background:var(--tan-soft);border:1px solid #ddd0b3;border-left:3px solid var(--orange);
-  border-radius:8px;padding:14px 16px;color:#6b5a3a;font-size:14px;margin:0 0 16px}
-
-/* Tabel di dalam artikel */
-.article table th{font-size:12px}
-.article table td{padding:9px 10px}
-
-/* Footer */
-footer{border-top:1px solid var(--line);margin-top:40px;padding:26px 0;
-  color:var(--mut);font-size:13px;text-align:center}
-footer .social{margin-bottom:10px;display:flex;gap:16px;justify-content:center;flex-wrap:wrap}
-footer .social a{color:var(--orange-d)}
-
-/* Sorotan screening */
-.shead{display:flex;align-items:flex-end;justify-content:space-between;flex-wrap:wrap;gap:8px;margin:0 0 16px}
-.shead h2{font-size:22px;margin:0;color:var(--ink)}
-.shead .sub{font-size:13px;color:var(--mut)}
-.shead a{font-size:14px;color:var(--orange-d);text-decoration:none;font-weight:600;white-space:nowrap}
-.shead a:hover{text-decoration:underline}
-.scards{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
-.sc{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:18px;
-  box-shadow:0 6px 20px rgba(60,50,30,.06);position:relative;overflow:hidden}
-.sc::before{content:"";position:absolute;left:0;top:0;bottom:0;width:4px;background:var(--buy)}
-.sc .top{display:flex;align-items:center;justify-content:space-between;margin-bottom:6px}
-.sc .code{font-size:22px;font-weight:800;letter-spacing:.5px;color:var(--ink)}
-.sc .cat{font-size:10px;color:#8a5a12;background:var(--tan-soft);border:1px solid #ddd0b3;
-  padding:2px 8px;border-radius:20px;white-space:nowrap}
-.sc .slab{font-size:10px;color:var(--mut);text-transform:uppercase;letter-spacing:.5px;margin-top:8px}
-.sc .sval{font-size:18px;font-weight:700;font-variant-numeric:tabular-nums}
-.sc .sratio{font-size:18px;font-weight:800;color:var(--buy);font-variant-numeric:tabular-nums}
-.rbar{width:100%;height:7px;border-radius:4px;overflow:hidden;margin-top:6px;background:var(--sell)}
-.rbar b{display:block;height:100%;background:var(--buy);border-radius:4px 0 0 4px}
-.rleg{font-size:11px;color:var(--mut);margin-top:4px}
-
-@media(max-width:720px){ .scards{grid-template-columns:1fr} }
-@media(max-width:560px){
-  .hero h1{font-size:30px}
-  .nav ul{gap:14px}
-  .avgcol{display:none}
-}
-</style>
+<meta name="description" content="Screening akumulasi asing harian IDX dan catatan bandarmology oleh AJOINVEST.">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='7' fill='%231a1a19'/><path d='M6 22 L13 14 L18 18 L26 9' stroke='%23a06f24' stroke-width='3' fill='none' stroke-linecap='round' stroke-linejoin='round'/></svg>">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700&display=swap">
+<link rel="stylesheet" href="style.css">
 </head>
 <body>
-
-<nav class="nav"><div class="wrap">
-  <a href="./" class="brand">AJO<span>INVEST</span></a>
-  <ul>
-    <li><a href="screening.html">Screening Harian</a></li>
-    <li><a href="kalkulator.html">Kalkulator</a></li>
-    <li><a href="blog.html">Blog</a></li>
-    <li><a href="ebook.html">Ebook</a></li>
-    <li><a href="about.html">Tentang</a></li>
-  </ul>
-</div></nav>
-
-<header class="hero"><div class="wrap">
-  <h1>Baca aliran dana <span>asing</span> IDX,<br>tiap hari.</h1>
-  <p>Saya <b>AJOINVEST</b>, investor ritel yang membaca pasar lewat bandarmology dan aliran dana asing. Di sini saya bagikan screening akumulasi asing dan catatan cara saya membaca pergerakan "uang besar" di bursa.</p>
-  <p style="font-size:15px;color:var(--mut);max-width:620px;margin:0 auto 22px">Catatan: yang saya bagikan adalah <b style="color:var(--orange-d)">Screening Sesi 1</b> (data sesi pagi), sebagai bahan pertimbangan untuk trading di <b style="color:var(--orange-d)">Sesi 2</b> pada hari bursa yang sama.</p>
-  <a href="screening.html" class="btn">Lihat Screening Hari Ini →</a>
-  <a href="blog.html" class="btn ghost">Baca Blog</a>
+<header class="topbar"><div class="inner">
+  <a class="brand" href="index.html">AJOINVEST</a>
+  <nav class="topnav">
+    <a href="screening.html">Screening</a>
+    <a href="kalkulator.html">Kalkulator</a>
+    <a href="blog.html">Blog</a>
+    <a href="ebook.html">Ebook</a>
+    <a href="about.html">Tentang</a>
+  </nav>
 </div></header>
-
-<section><div class="wrap">
-  <div class="shead">
+<main class="wrap">
+  <div class="cols cols-hero" style="padding-bottom:34px">
     <div>
-      <h2>🔥 Sorotan Screening Hari Ini</h2>
-      <div class="sub">Pilihan akumulasi asing · Sesi 1 · 1 September 2026</div>
-    </div>
-    <a href="screening.html">Lihat screening lengkap →</a>
-  </div>
-  <div class="scards">
-    <div class="sc">
-      <div class="top"><span class="code">BBRI</span><span class="cat">Highlight</span></div>
-      <div class="slab">Net Foreign Value</div>
-      <div class="sval">Rp 405.96 M</div>
-      <div class="slab">Rasio B/S</div>
-      <div class="sratio">5.4x</div>
-      <div class="rbar" title="Beli 86% : Jual 14%"><b style="width:86%"></b></div>
-      <div class="rleg">Beli 86% : Jual 14%</div>
-    </div>
-    <div class="sc">
-      <div class="top"><span class="code">BMRI</span><span class="cat">Highlight</span></div>
-      <div class="slab">Net Foreign Value</div>
-      <div class="sval">Rp 124.64 M</div>
-      <div class="slab">Rasio B/S</div>
-      <div class="sratio">2.4x</div>
-      <div class="rbar" title="Beli 77% : Jual 23%"><b style="width:77%"></b></div>
-      <div class="rleg">Beli 77% : Jual 23%</div>
-    </div>
-    <div class="sc">
-      <div class="top"><span class="code">SUPA</span><span class="cat">Radar / Akumulasi Dini</span></div>
-      <div class="slab">Net Foreign Value</div>
-      <div class="sval">Rp 2.19 M</div>
-      <div class="slab">Rasio B/S</div>
-      <div class="sratio">4.7x</div>
-      <div class="rbar" title="Beli 85% : Jual 15%"><b style="width:85%"></b></div>
-      <div class="rleg">Beli 85% : Jual 15%</div>
-    </div>
-  </div>
-  <p class="legend" style="font-size:12px;color:var(--mut);margin:14px 0 0;text-align:center">Bukan rekomendasi jual/beli. Ilustrasi hasil screening Sesi 1 untuk edukasi.</p>
-</div></section>
-
-<section><div class="wrap">
-  <h2 class="section">Apa yang Anda dapat di sini</h2>
-  <div class="grid">
-    <div class="card">
-      <span class="tag">Harian</span>
-      <h3>Screening Akumulasi Asing</h3>
-      <p>Daftar saham dengan pembelian asing terkuat berdasarkan data Sesi 1, lengkap dengan Rasio B/S dan kategori Highlight &amp; Radar. Dibagikan tiap hari bursa sebagai bahan pertimbangan untuk trading Sesi 2.</p>
+      <h1 style="font-size:42px;line-height:1.08;letter-spacing:-.03em;margin-bottom:14px">Baca aliran dana asing IDX, tiap hari bursa.</h1>
+      <p class="lead" style="font-size:16px;max-width:32em;margin-bottom:22px">Screening akumulasi asing dari data Sesi 1, untuk bahan pertimbangan trading Sesi 2 di hari yang sama.</p>
+      <div style="display:flex;flex-wrap:wrap;gap:10px">
+        <a class="btn btn-dark" href="screening.html">Screening hari ini →</a>
+        <a class="btn btn-line" href="blog.html">Catatan pasar</a>
+      </div>
     </div>
     <div class="card">
-      <span class="tag">Edukasi</span>
-      <h3>Catatan &amp; Blog</h3>
-      <p>Cara membaca aliran dana asing, konsep akumulasi vs distribusi, dan cara saya menyaring saham tanpa terjebak angka besar yang menyesatkan.</p>
+      <div class="kicker" style="border:0;padding:0;margin-bottom:10px">Dua angka yang dipakai</div>
+      <p style="font-size:14px;color:var(--ink-2);padding-bottom:10px;border-bottom:1px solid var(--line-2)"><b style="color:var(--ink)">Net Foreign Value</b> — besarnya uang asing yang masuk.</p>
+      <p style="font-size:14px;color:var(--ink-2);padding-top:10px"><b style="color:var(--ink)">Rasio B/S</b> — seberapa dominan beli asing dibanding jualnya.</p>
+    </div>
+  </div>
+
+  <div class="section-h" style="justify-content:space-between">
+    <h2>Sorotan · 1 September 2026</h2>
+    <a href="screening.html" style="font-size:13px;font-weight:500">Lihat semua →</a>
+  </div>
+  <div class="grid-auto">
+    <div class="card">
+      <div style="display:flex;justify-content:space-between;align-items:baseline;margin-bottom:12px">
+        <span class="kode" style="font-size:19px;font-weight:700">BBRI</span>
+        <span class="kicker">Highlight</span>
+      </div>
+      <div class="net-l">Net foreign value</div>
+      <div class="num" style="font-size:24px;font-weight:600;margin-bottom:12px">Rp 405.96 M</div>
+      <div class="meter" style="display:flex;align-items:center;gap:10px">
+        <span class="track" style="flex:1;height:6px;background:var(--line-2);border-radius:3px"><span class="fill" style="display:block;height:6px;background:var(--accent);border-radius:3px;width:90%"></span></span>
+        <span class="rasio">Rasio 5.4x</span>
+      </div>
     </div>
     <div class="card">
-      <span class="tag">Transparan</span>
-      <h3>Metode Terbuka</h3>
-      <p>Semua angka dihitung dari data Foreign Transaction resmi. Rumus dan ambang batasnya saya jelaskan apa adanya, bukan kotak hitam.</p>
+      <div style="display:flex;justify-content:space-between;align-items:baseline;margin-bottom:12px">
+        <span class="kode" style="font-size:19px;font-weight:700">BMRI</span>
+        <span class="kicker">Highlight</span>
+      </div>
+      <div class="net-l">Net foreign value</div>
+      <div class="num" style="font-size:24px;font-weight:600;margin-bottom:12px">Rp 124.64 M</div>
+      <div class="meter" style="display:flex;align-items:center;gap:10px">
+        <span class="track" style="flex:1;height:6px;background:var(--line-2);border-radius:3px"><span class="fill" style="display:block;height:6px;background:var(--accent);border-radius:3px;width:40%"></span></span>
+        <span class="rasio">Rasio 2.4x</span>
+      </div>
+    </div>
+    <div class="card">
+      <div style="display:flex;justify-content:space-between;align-items:baseline;margin-bottom:12px">
+        <span class="kode" style="font-size:19px;font-weight:700">SUPA</span>
+        <span class="kicker">Radar</span>
+      </div>
+      <div class="net-l">Net foreign value</div>
+      <div class="num" style="font-size:24px;font-weight:600;margin-bottom:12px">Rp 2.19 M</div>
+      <div class="meter" style="display:flex;align-items:center;gap:10px">
+        <span class="track" style="flex:1;height:6px;background:var(--line-2);border-radius:3px"><span class="fill" style="display:block;height:6px;background:var(--accent);border-radius:3px;width:78%"></span></span>
+        <span class="rasio">Rasio 4.7x</span>
+      </div>
     </div>
   </div>
-</div></section>
 
-<section><div class="wrap">
-  <div class="card" style="max-width:720px;border-color:#f0cfa0;background:linear-gradient(180deg,#fff,#fdf3e6)">
-    <span class="tag">Ebook</span>
-    <h3 style="font-size:18px">Belajar Investasi Saham dari Nol</h3>
-    <p style="margin:0 0 14px">Panduan pemula mulai investasi saham dengan tenang dan sistematis, dari memahami bursa sampai menyusun portofolio pertama. Promo Rp 79.000 dari Rp 239.000. Format PDF.</p>
-    <a href="ebook.html" class="btn">Lihat Ebook &rarr;</a>
+  <div class="grid-auto" style="margin-top:34px">
+    <div class="card"><h3 style="font-size:16px;margin-bottom:6px">Screening harian</h3><p style="font-size:14px;color:var(--ink-2)">Saham dengan beli asing terkuat di Sesi 1, lengkap Rasio B/S.</p></div>
+    <div class="card"><h3 style="font-size:16px;margin-bottom:6px">Metode terbuka</h3><p style="font-size:14px;color:var(--ink-2)">Dihitung dari data Foreign Transaction resmi, rumusnya dijelaskan.</p></div>
+    <div class="card"><h3 style="font-size:16px;margin-bottom:6px">Ebook pemula</h3><p style="font-size:14px;color:var(--ink-2);margin-bottom:8px">Belajar investasi saham dari nol. Rp 79.000.</p><a href="ebook.html" style="font-size:13px;font-weight:500">Lihat ebook →</a></div>
   </div>
-</div></section>
-
-<section><div class="wrap">
-  <h2 class="section">Tentang Saya</h2>
-  <div class="card" style="max-width:720px">
-    <p class="lead" style="margin:0 0 6px">Saya <b>trader aktif di IDX sejak 2021</b>, dengan portofolio jangka panjang maupun trading harian. Saya percaya pergerakan harga saham sering meninggalkan jejak, dan jejak paling jelas ada pada aliran dana asing dan aktivitas broker besar. Ketimbang menebak, saya lebih suka membaca datanya.</p>
-    <p style="color:var(--mut);margin:10px 0 0">AJOINVEST adalah catatan perjalanan itu: proses, metode, dan pembelajaran saya, dibagikan terbuka untuk sesama investor ritel. <a href="about.html">Kenali saya lebih jauh →</a></p>
-  </div>
-</div></section>
-
-<footer><div class="wrap">
-  <div class="social">
-    <a href="https://www.instagram.com/ajo.invest" target="_blank" rel="noopener">Instagram</a>
-  </div>
-  © 2026 AJOINVEST · Bukan rekomendasi jual/beli. Konten untuk edukasi.
-</div></footer>
-
+  <footer class="foot">
+    <span>© 2026 AJOINVEST · Konten edukasi, bukan rekomendasi jual/beli.</span>
+    <a href="https://www.instagram.com/ajo.invest">@ajo.invest</a>
+  </footer>
+</main>
 </body>
 </html>

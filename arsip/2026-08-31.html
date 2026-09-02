@@ -4,221 +4,44 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <title>Screening Akumulasi Asing · 31 Agustus 2026</title>
-<meta name="description" content="Screening akumulasi asing IDX Sesi 1, 31 Agustus 2026.">
-<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='7' fill='%231c1b19'/><path d='M6 22 L13 14 L18 18 L26 9' stroke='%23e8821e' stroke-width='3' fill='none' stroke-linecap='round' stroke-linejoin='round'/></svg>">
-<style>
-/* ===== Tema AJOINVEST, Light / Brand IG (charcoal + beige + oranye) ===== */
-:root{
-  --bg:#f7f3ea; --bg2:#f1ebdd; --card:#ffffff; --line:#e7dfcd;
-  --ink:#1f1c17; --mut:#7c746a;
-  --tan:#cdbf9e; --tan-soft:#ece4d2;
-  --orange:#e8821e; --orange-d:#c96f12;
-  --dark:#1c1b19; --dark-txt:#efe7d6;
-  --buy:#16a34a; --sell:#dc2626;
-  --grn:#e8821e; --grn2:#c96f12; --accent:#e8821e;
-}
-*{box-sizing:border-box}
-html{scroll-behavior:smooth}
-body{
-  margin:0; color:var(--ink); background:var(--bg);
-  font-family:-apple-system,Segoe UI,Roboto,Arial,sans-serif; line-height:1.6;
-  min-height:100vh;
-}
-a{color:var(--orange-d);text-decoration:none}
-a:hover{text-decoration:underline}
-.wrap{max-width:960px;margin:0 auto;padding:0 20px}
-
-/* Nav, bar charcoal gelap */
-.nav{position:sticky;top:0;z-index:10;background:var(--dark);border-bottom:1px solid #2c2a26}
-.nav .wrap{display:flex;align-items:center;justify-content:space-between;height:60px}
-.brand{font-weight:800;letter-spacing:.5px;font-size:17px;color:var(--dark-txt);text-decoration:none}
-.brand:hover{color:#fff;text-decoration:none}
-.brand span{color:var(--orange)}
-.nav ul{display:flex;gap:22px;list-style:none;margin:0;padding:0;font-size:14px}
-.nav a{color:#b7ad9a}
-.nav a.active,.nav a:hover{color:#fff;text-decoration:none}
-
-/* Hero */
-.hero{padding:70px 0 40px;text-align:center}
-.hero h1{font-size:38px;margin:0 0 10px;line-height:1.2;color:var(--ink)}
-.hero h1 span{color:var(--orange)}
-.hero p{color:var(--mut);font-size:17px;max-width:620px;margin:0 auto 26px}
-.btn{display:inline-block;background:var(--orange);color:#fff;font-weight:700;
-  padding:11px 22px;border-radius:10px;font-size:15px;margin:4px}
-.btn:hover{text-decoration:none;filter:brightness(1.05)}
-.btn.ghost{background:transparent;color:var(--ink);border:1px solid #d8cfbc}
-
-/* Sections & cards */
-section{padding:34px 0}
-h2.section{font-size:22px;margin:0 0 18px;color:var(--ink)}
-.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:18px}
-.card{background:var(--card);border:1px solid var(--line);border-radius:14px;
-  padding:20px;box-shadow:0 6px 20px rgba(60,50,30,.06)}
-.card h3{margin:0 0 8px;font-size:16px;color:var(--ink)}
-.card p{margin:0;color:var(--mut);font-size:14px}
-.tag{display:inline-block;font-size:11px;color:#8a5a12;background:var(--tan-soft);
-  border:1px solid #ddd0b3;padding:2px 9px;border-radius:20px;margin-bottom:10px}
-
-/* About / lead */
-.lead{font-size:16px;color:var(--ink)}
-.lead b{color:#000}
-.factrow{display:flex;flex-wrap:wrap;gap:10px;margin:14px 0 0}
-.fact{font-size:12px;color:#6b5a3a;background:var(--tan-soft);border:1px solid #ddd0b3;
-  padding:4px 11px;border-radius:20px}
-
-/* Screening table */
-.legend{font-size:13px;color:var(--mut);margin:0 0 20px;line-height:1.6}
-table{width:100%;border-collapse:collapse;font-size:13px}
-th{text-align:left;color:var(--mut);font-weight:600;font-size:11px;text-transform:uppercase;
-  letter-spacing:.5px;padding:6px 10px;border-bottom:1px solid var(--line)}
-td{padding:9px 10px;border-bottom:1px solid var(--line)}
-tr:last-child td{border-bottom:none}
-.rank{color:var(--mut);width:26px}.code{font-weight:700;letter-spacing:.5px;color:var(--ink)}
-.num{text-align:right;font-variant-numeric:tabular-nums}
-.ratio{font-weight:700;color:var(--buy)}
-.bar{height:4px;background:#ece4d2;border-radius:3px;margin-top:5px;overflow:hidden}
-.bar span{display:block;height:100%;border-radius:3px}
-.rbar{width:84px;height:6px;border-radius:4px;overflow:hidden;margin:5px 0 0 auto;background:var(--sell)}
-.rbar b{display:block;height:100%;background:var(--buy);border-radius:4px 0 0 4px}
-.tscroll{overflow-x:auto;-webkit-overflow-scrolling:touch}
-.pill{font-size:11px;color:#15803d;background:#dcfce7;border:1px solid #bbf7d0;
-  padding:2px 8px;border-radius:20px;white-space:nowrap}
-.pill.sell{color:#b91c1c;background:#fee2e2;border-color:#fecaca}
-
-/* Blog */
-.post{border-bottom:1px solid var(--line);padding:20px 0}
-.post:last-child{border-bottom:none}
-.post h3{margin:0 0 6px;font-size:19px}
-.post h3 a{color:var(--ink)}
-.post .meta{color:var(--mut);font-size:12px;margin-bottom:8px}
-.article{max-width:720px;margin:0 auto}
-.article h1{font-size:30px;margin:10px 0 6px;color:var(--ink)}
-.article h2{font-size:20px;margin:28px 0 8px;color:var(--ink)}
-.article .meta{color:var(--mut);font-size:13px;margin-bottom:24px}
-.article p{margin:0 0 16px}
-.article ul{margin:0 0 16px;padding-left:20px;color:var(--ink)}
-.article li{margin-bottom:6px}
-.note{background:var(--tan-soft);border:1px solid #ddd0b3;border-left:3px solid var(--orange);
-  border-radius:8px;padding:14px 16px;color:#6b5a3a;font-size:14px;margin:0 0 16px}
-
-/* Tabel di dalam artikel */
-.article table th{font-size:12px}
-.article table td{padding:9px 10px}
-
-/* Footer */
-footer{border-top:1px solid var(--line);margin-top:40px;padding:26px 0;
-  color:var(--mut);font-size:13px;text-align:center}
-footer .social{margin-bottom:10px;display:flex;gap:16px;justify-content:center;flex-wrap:wrap}
-footer .social a{color:var(--orange-d)}
-
-@media(max-width:560px){
-  .hero h1{font-size:30px}
-  .nav ul{gap:14px}
-  table{font-size:12px}
-  th,td{padding:7px 6px}
-  .num{white-space:nowrap}
-  .rbar{width:52px;height:5px}
-  .pill{font-size:10px;padding:2px 6px}
-}
-
-/* Sort tabel */
-.sortable th{cursor:pointer;user-select:none;white-space:nowrap}
-.sortable th:hover{color:var(--ink)}
-.arw{color:var(--orange);font-size:10px;margin-left:3px}
-.sortable{table-layout:fixed;min-width:440px}
-.sortable th:nth-child(1),.sortable td:nth-child(1){width:36px}
-.sortable th:nth-child(2),.sortable td:nth-child(2){width:20%}
-.sortable th:nth-child(3),.sortable td:nth-child(3){width:32%}
-.sortable th:nth-child(4),.sortable td:nth-child(4){width:22%}
-.sortable td.code{overflow:hidden;text-overflow:ellipsis}
-</style>
+<meta name="description" content="Arsip screening akumulasi asing IDX Sesi 1, 31 Agustus 2026.">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='7' fill='%231a1a19'/><path d='M6 22 L13 14 L18 18 L26 9' stroke='%23a06f24' stroke-width='3' fill='none' stroke-linecap='round' stroke-linejoin='round'/></svg>">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700&display=swap">
+<link rel="stylesheet" href="../style.css">
 </head>
 <body>
-<nav class="nav"><div class="wrap">
-  <a href="../" class="brand">AJO<span>INVEST</span></a>
-  <ul>
-    <li><a href="../screening.html">Screening Harian</a></li>
-    <li><a href="../kalkulator.html">Kalkulator</a></li>
-    <li><a href="../blog.html">Blog</a></li>
-    <li><a href="../ebook.html">Ebook</a></li>
-    <li><a href="../about.html">Tentang</a></li>
-  </ul>
-</div></nav>
-<div style="background:#2c2a26;color:#efe7d6;text-align:center;font-size:13px;padding:9px 16px">
-  📁 Anda melihat <b>arsip</b> screening 31 Agustus 2026. <a href="../screening.html" style="color:#e8821e">Lihat screening terbaru →</a>
-</div>
-<section><div class="wrap">
-  <h2 class="section">📈 Screening Akumulasi Asing</h2>
-  <p class="legend">Sesi 1 · <b>31 Agustus 2026</b> · sumber: data Foreign Transaction IDX.<br>
-  Diurut dari Net Foreign Value terbesar. Kategori: <b>Highlight</b> = akumulasi kuat &amp; nilai besar, <b>Radar</b> = akumulasi sangat kuat tapi nilai masih kecil.</p>
-  <p class="legend" style="margin-top:-10px">💡 Klik judul kolom (mis. Net Foreign Value atau Rasio B/S) untuk mengurutkan.</p>
-  <p class="legend" style="margin-top:-10px">📁 <a href="../arsip.html">Lihat arsip screening sebelumnya →</a></p>
-
-  <div class="note" style="margin:0 0 22px">Ini adalah <b>Screening Sesi 1</b>, dihitung dari data perdagangan sesi pagi, bukan screening harian penuh. Gunakan sebagai bahan pertimbangan untuk trading di <b>Sesi 2</b> pada hari bursa yang sama, paling relevan dibaca sebelum sesi siang dimulai.</div>
-
-  <p class="legend" style="margin-top:-6px">Catatan: pagi ini akumulasi asing menyebar cukup lebar, dipimpin BBRI di sektor perbankan lalu berlanjut ke saham energi dan logam seperti BULL, ESSA, SINI dan ELSA. Daftar Highlight terisi delapan saham, dengan Radar sepuluh saham lapis dua yang rasio beli asingnya sangat kuat walau nilainya masih kecil. Di sisi lain tekanan jual asing masih terlihat di beberapa saham besar seperti GOTO, EMAS dan AMMN, jadi tetap seleksi dan jangan asal ikut.</p>
-
-  <div class="card" style="margin-bottom:22px">
-    <h3 style="margin-top:0">🟢 Highlight, Akumulasi Kuat <span style="color:var(--mut);font-weight:400;font-size:13px">(Rasio &gt;2x &amp; Net ≥ Rp 5 M · 8 saham)</span></h3>
-    <div class="tscroll"><table class="sortable"><thead><tr><th>#</th><th>Kode</th><th class="num">Net Foreign Value</th><th class="num">Rasio B/S</th><th>Sinyal</th></tr></thead><tbody><tr><td class="rank">1</td><td class="code">BBRI</td><td class="num">Rp 163.99 M</td><td class="num"><span class="ratio">4.2x</span><div class="rbar" title="Beli 84% : Jual 16%"><b style="width:84%"></b></div></td><td><span class="pill">Beli Sangat Kuat</span></td></tr><tr><td class="rank">2</td><td class="code">BULL</td><td class="num">Rp 35.81 M</td><td class="num"><span class="ratio">3.6x</span><div class="rbar" title="Beli 82% : Jual 18%"><b style="width:82%"></b></div></td><td><span class="pill">Beli Sangat Kuat</span></td></tr><tr><td class="rank">3</td><td class="code">ESSA</td><td class="num">Rp 26.92 M</td><td class="num"><span class="ratio">9.5x</span><div class="rbar" title="Beli 91% : Jual 9%"><b style="width:91%"></b></div></td><td><span class="pill">Beli Sangat Kuat</span></td></tr><tr><td class="rank">4</td><td class="code">SINI</td><td class="num">Rp 19.12 M</td><td class="num"><span class="ratio">3.8x</span><div class="rbar" title="Beli 83% : Jual 17%"><b style="width:83%"></b></div></td><td><span class="pill">Beli Sangat Kuat</span></td></tr><tr><td class="rank">5</td><td class="code">WIFI</td><td class="num">Rp 12.01 M</td><td class="num"><span class="ratio">3.0x</span><div class="rbar" title="Beli 80% : Jual 20%"><b style="width:80%"></b></div></td><td><span class="pill">Beli Kuat</span></td></tr><tr><td class="rank">6</td><td class="code">FILM</td><td class="num">Rp 9.08 M</td><td class="num"><span class="ratio">2.6x</span><div class="rbar" title="Beli 78% : Jual 22%"><b style="width:78%"></b></div></td><td><span class="pill">Beli Kuat</span></td></tr><tr><td class="rank">7</td><td class="code">SGER</td><td class="num">Rp 5.84 M</td><td class="num"><span class="ratio">4.4x</span><div class="rbar" title="Beli 84% : Jual 16%"><b style="width:84%"></b></div></td><td><span class="pill">Beli Sangat Kuat</span></td></tr><tr><td class="rank">8</td><td class="code">ELSA</td><td class="num">Rp 5.02 M</td><td class="num"><span class="ratio">7.7x</span><div class="rbar" title="Beli 90% : Jual 10%"><b style="width:90%"></b></div></td><td><span class="pill">Beli Sangat Kuat</span></td></tr></tbody></table></div>
+<header class="topbar"><div class="inner">
+  <a class="brand" href="../index.html">AJOINVEST</a>
+  <nav class="topnav">
+    <a href="../screening.html" aria-current="page">Screening</a>
+    <a href="../kalkulator.html">Kalkulator</a>
+    <a href="../blog.html">Blog</a>
+    <a href="../ebook.html">Ebook</a>
+    <a href="../about.html">Tentang</a>
+  </nav>
+</div></header>
+<main class="wrap">
+  <div style="display:flex;flex-wrap:wrap;justify-content:space-between;align-items:flex-end;gap:12px;margin-bottom:22px">
+    <div>
+      <div class="kicker" style="margin-bottom:10px">Sesi 1 · <span id="tanggal">31 Agustus 2026</span></div>
+      <h1 class="h-page">Akumulasi asing hari ini</h1>
+    </div>
+    <a href="../arsip.html" style="font-size:13px;font-weight:500">Arsip →</a>
   </div>
+  <div class="callout" style="margin-bottom:26px">Ini <b>Screening Sesi 1</b>, dihitung dari data perdagangan sesi pagi, bukan screening harian penuh. Gunakan sebagai bahan pertimbangan untuk trading di <b>Sesi 2</b> pada hari bursa yang sama, paling relevan dibaca sebelum sesi siang dimulai.</div>
+  <p class="lead" style="max-width:60em;margin-bottom:24px">Catatan: pagi ini akumulasi asing menyebar cukup lebar, dipimpin BBRI di sektor perbankan lalu berlanjut ke saham energi dan logam seperti BULL, ESSA, SINI dan ELSA. Daftar Highlight terisi delapan saham, dengan Radar sepuluh saham lapis dua yang rasio beli asingnya sangat kuat walau nilainya masih kecil. Di sisi lain tekanan jual asing masih terlihat di beberapa saham besar seperti GOTO, EMAS dan AMMN, jadi tetap seleksi dan jangan asal ikut.</p>
+  <div class="grid-stats" style="margin-bottom:28px"><div class="card stat"><div class="label">Highlight</div><div class="val num">8</div></div><div class="card stat"><div class="label">Radar</div><div class="val num">10</div></div><div class="card stat"><div class="label">Total net beli</div><div class="val num">Rp 301.44 M</div></div><div class="card stat"><div class="label">Rasio tertinggi</div><div class="val num">92.6x</div></div></div>
+  <div class="section-h"><h2>Highlight</h2><span>Rasio &gt; 2x · net ≥ Rp 5 M</span></div>
+  <div class="grid" id="highlight" style="margin-bottom:32px"><div class="card row row-hl"><div><div class="head"><span class="kode">BBRI</span><span class="sinyal">Beli sangat kuat</span></div><div class="meter"><span class="track"><span class="fill" style="width:70%"></span></span><span class="rasio">Rasio 4.2x</span></div></div><div style="text-align:right"><div class="net-l">Net</div><div class="net num">Rp 163.99 M</div></div></div><div class="card row row-hl"><div><div class="head"><span class="kode">BULL</span><span class="sinyal">Beli sangat kuat</span></div><div class="meter"><span class="track"><span class="fill" style="width:60%"></span></span><span class="rasio">Rasio 3.6x</span></div></div><div style="text-align:right"><div class="net-l">Net</div><div class="net num">Rp 35.81 M</div></div></div><div class="card row row-hl"><div><div class="head"><span class="kode">ESSA</span><span class="sinyal">Beli sangat kuat</span></div><div class="meter"><span class="track"><span class="fill" style="width:100%"></span></span><span class="rasio">Rasio 9.5x</span></div></div><div style="text-align:right"><div class="net-l">Net</div><div class="net num">Rp 26.92 M</div></div></div><div class="card row row-hl"><div><div class="head"><span class="kode">SINI</span><span class="sinyal">Beli sangat kuat</span></div><div class="meter"><span class="track"><span class="fill" style="width:63%"></span></span><span class="rasio">Rasio 3.8x</span></div></div><div style="text-align:right"><div class="net-l">Net</div><div class="net num">Rp 19.12 M</div></div></div><div class="card row row-hl"><div><div class="head"><span class="kode">WIFI</span><span class="sinyal">Beli sangat kuat</span></div><div class="meter"><span class="track"><span class="fill" style="width:50%"></span></span><span class="rasio">Rasio 3x</span></div></div><div style="text-align:right"><div class="net-l">Net</div><div class="net num">Rp 12.01 M</div></div></div><div class="card row row-hl"><div><div class="head"><span class="kode">FILM</span><span class="sinyal">Beli kuat</span></div><div class="meter"><span class="track"><span class="fill" style="width:43%"></span></span><span class="rasio">Rasio 2.6x</span></div></div><div style="text-align:right"><div class="net-l">Net</div><div class="net num">Rp 9.08 M</div></div></div><div class="card row row-hl"><div><div class="head"><span class="kode">SGER</span><span class="sinyal">Beli sangat kuat</span></div><div class="meter"><span class="track"><span class="fill" style="width:73%"></span></span><span class="rasio">Rasio 4.4x</span></div></div><div style="text-align:right"><div class="net-l">Net</div><div class="net num">Rp 5.84 M</div></div></div><div class="card row row-hl"><div><div class="head"><span class="kode">ELSA</span><span class="sinyal">Beli sangat kuat</span></div><div class="meter"><span class="track"><span class="fill" style="width:100%"></span></span><span class="rasio">Rasio 7.7x</span></div></div><div style="text-align:right"><div class="net-l">Net</div><div class="net num">Rp 5.02 M</div></div></div></div>
+  <div class="section-h"><h2>Radar</h2><span>Rasio &gt; 3x · net Rp 1–5 M</span></div>
+  <div class="grid" id="radar"><div class="card row"><div><div class="head"><span class="kode">AKRA</span><span class="sinyal">Beli sangat kuat</span></div><div class="meter"><span class="track"><span class="fill" style="width:53%"></span></span><span class="rasio">Rasio 3.2x</span></div></div><div style="text-align:right"><div class="net-l">Net</div><div class="net num">Rp 4.54 M</div></div></div><div class="card row"><div><div class="head"><span class="kode">CBRE</span><span class="sinyal">Beli sangat kuat</span></div><div class="meter"><span class="track"><span class="fill" style="width:100%"></span></span><span class="rasio">Rasio 66.5x</span></div></div><div style="text-align:right"><div class="net-l">Net</div><div class="net num">Rp 4.12 M</div></div></div><div class="card row"><div><div class="head"><span class="kode">SOCI</span><span class="sinyal">Beli sangat kuat</span></div><div class="meter"><span class="track"><span class="fill" style="width:70%"></span></span><span class="rasio">Rasio 4.2x</span></div></div><div style="text-align:right"><div class="net-l">Net</div><div class="net num">Rp 3.28 M</div></div></div><div class="card row"><div><div class="head"><span class="kode">GULA</span><span class="sinyal">Beli sangat kuat</span></div><div class="meter"><span class="track"><span class="fill" style="width:100%"></span></span><span class="rasio">Rasio 12.7x</span></div></div><div style="text-align:right"><div class="net-l">Net</div><div class="net num">Rp 2.38 M</div></div></div><div class="card row"><div><div class="head"><span class="kode">GPSO</span><span class="sinyal">Beli sangat kuat</span></div><div class="meter"><span class="track"><span class="fill" style="width:100%"></span></span><span class="rasio">Rasio 6.6x</span></div></div><div style="text-align:right"><div class="net-l">Net</div><div class="net num">Rp 2.25 M</div></div></div><div class="card row"><div><div class="head"><span class="kode">TRIN</span><span class="sinyal">Beli sangat kuat</span></div><div class="meter"><span class="track"><span class="fill" style="width:62%"></span></span><span class="rasio">Rasio 3.7x</span></div></div><div style="text-align:right"><div class="net-l">Net</div><div class="net num">Rp 1.86 M</div></div></div><div class="card row"><div><div class="head"><span class="kode">PSKT</span><span class="sinyal">Beli sangat kuat</span></div><div class="meter"><span class="track"><span class="fill" style="width:53%"></span></span><span class="rasio">Rasio 3.2x</span></div></div><div style="text-align:right"><div class="net-l">Net</div><div class="net num">Rp 1.45 M</div></div></div><div class="card row"><div><div class="head"><span class="kode">AYAM</span><span class="sinyal">Beli sangat kuat</span></div><div class="meter"><span class="track"><span class="fill" style="width:100%"></span></span><span class="rasio">Rasio 92.6x</span></div></div><div style="text-align:right"><div class="net-l">Net</div><div class="net num">Rp 1.31 M</div></div></div><div class="card row"><div><div class="head"><span class="kode">GTSI</span><span class="sinyal">Beli sangat kuat</span></div><div class="meter"><span class="track"><span class="fill" style="width:57%"></span></span><span class="rasio">Rasio 3.4x</span></div></div><div style="text-align:right"><div class="net-l">Net</div><div class="net num">Rp 1.25 M</div></div></div><div class="card row"><div><div class="head"><span class="kode">BKSL</span><span class="sinyal">Beli sangat kuat</span></div><div class="meter"><span class="track"><span class="fill" style="width:83%"></span></span><span class="rasio">Rasio 5x</span></div></div><div style="text-align:right"><div class="net-l">Net</div><div class="net num">Rp 1.21 M</div></div></div></div>
 
-  <div class="card">
-    <h3 style="margin-top:0">🌱 Akumulasi Dini / Radar <span style="color:var(--mut);font-weight:400;font-size:13px">(Rasio &gt;3x &amp; Net Rp 1–5 M · 10 saham)</span></h3>
-    <div class="tscroll"><table class="sortable"><thead><tr><th>#</th><th>Kode</th><th class="num">Net Foreign Value</th><th class="num">Rasio B/S</th><th>Sinyal</th></tr></thead><tbody><tr><td class="rank">1</td><td class="code">AKRA</td><td class="num">Rp 4.54 M</td><td class="num"><span class="ratio">3.2x</span><div class="rbar" title="Beli 81% : Jual 19%"><b style="width:81%"></b></div></td><td><span class="pill">Beli Sangat Kuat</span></td></tr><tr><td class="rank">2</td><td class="code">CBRE</td><td class="num">Rp 4.12 M</td><td class="num"><span class="ratio">66.5x</span><div class="rbar" title="Beli 99% : Jual 1%"><b style="width:99%"></b></div></td><td><span class="pill">Beli Sangat Kuat</span></td></tr><tr><td class="rank">3</td><td class="code">SOCI</td><td class="num">Rp 3.28 M</td><td class="num"><span class="ratio">4.2x</span><div class="rbar" title="Beli 84% : Jual 16%"><b style="width:84%"></b></div></td><td><span class="pill">Beli Sangat Kuat</span></td></tr><tr><td class="rank">4</td><td class="code">GULA</td><td class="num">Rp 2.38 M</td><td class="num"><span class="ratio">12.7x</span><div class="rbar" title="Beli 93% : Jual 7%"><b style="width:93%"></b></div></td><td><span class="pill">Beli Sangat Kuat</span></td></tr><tr><td class="rank">5</td><td class="code">GPSO</td><td class="num">Rp 2.25 M</td><td class="num"><span class="ratio">6.6x</span><div class="rbar" title="Beli 88% : Jual 12%"><b style="width:88%"></b></div></td><td><span class="pill">Beli Sangat Kuat</span></td></tr><tr><td class="rank">6</td><td class="code">TRIN</td><td class="num">Rp 1.86 M</td><td class="num"><span class="ratio">3.7x</span><div class="rbar" title="Beli 82% : Jual 18%"><b style="width:82%"></b></div></td><td><span class="pill">Beli Sangat Kuat</span></td></tr><tr><td class="rank">7</td><td class="code">PSKT</td><td class="num">Rp 1.45 M</td><td class="num"><span class="ratio">3.2x</span><div class="rbar" title="Beli 81% : Jual 19%"><b style="width:81%"></b></div></td><td><span class="pill">Beli Sangat Kuat</span></td></tr><tr><td class="rank">8</td><td class="code">AYAM</td><td class="num">Rp 1.31 M</td><td class="num"><span class="ratio">92.6x</span><div class="rbar" title="Beli 99% : Jual 1%"><b style="width:99%"></b></div></td><td><span class="pill">Beli Sangat Kuat</span></td></tr><tr><td class="rank">9</td><td class="code">GTSI</td><td class="num">Rp 1.25 M</td><td class="num"><span class="ratio">3.4x</span><div class="rbar" title="Beli 82% : Jual 18%"><b style="width:82%"></b></div></td><td><span class="pill">Beli Sangat Kuat</span></td></tr><tr><td class="rank">10</td><td class="code">BKSL</td><td class="num">Rp 1.21 M</td><td class="num"><span class="ratio">5.0x</span><div class="rbar" title="Beli 86% : Jual 14%"><b style="width:86%"></b></div></td><td><span class="pill">Beli Sangat Kuat</span></td></tr></tbody></table></div>
-  </div>
-
-  <p class="legend" style="margin-top:20px">Bukan rekomendasi jual/beli. Rasio dapat membesar saat Foreign Sell kecil; selalu dibaca bersama filter Net Foreign Value.</p>
-</div></section>
-
-<footer><div class="wrap">
-  <div class="social">
-    <a href="https://www.instagram.com/ajo.invest" target="_blank" rel="noopener">Instagram</a>
-  </div>
-  © 2026 AJOINVEST · Diperbarui otomatis dari data Foreign Transaction · Bukan rekomendasi jual/beli.
-</div></footer>
-
-<script>
-(function(){
-  function val(td, idx){
-    var t=(td.textContent||'').trim();
-    if(idx===3){ var m=t.match(/([\d.]+)\s*x/i); return m?parseFloat(m[1]):-Infinity; } // Rasio B/S (x)
-    if(idx===2){ // Net Foreign Value (Rp, suffix)
-      var m=t.match(/([\d.,]+)\s*(t|b|m|jt|rb|k)?/i);
-      if(!m) return -Infinity;
-      var num=parseFloat(m[1].replace(/,/g,''));
-      var f={t:1e12,b:1e9,m:1e9,jt:1e6,rb:1e3,k:1e3}[(m[2]||'m').toLowerCase()]||1;
-      return num*f;
-    }
-    if(idx===0){ var n=parseFloat(t); return isNaN(n)?0:n; } // #
-    return t.toLowerCase(); // Kode / Sinyal
-  }
-  function sortBy(table, idx, th){
-    var tb=table.tBodies[0], rows=Array.prototype.slice.call(tb.rows);
-    var dir=(th.getAttribute('data-dir')==='asc')?'desc':'asc';
-    var ths=table.tHead.rows[0].cells;
-    for(var j=0;j<ths.length;j++){ if(ths[j]!==th){ ths[j].removeAttribute('data-dir'); var a=ths[j].querySelector('.arw'); if(a)a.textContent=''; } }
-    th.setAttribute('data-dir',dir);
-    var ar=th.querySelector('.arw'); if(ar) ar.textContent = dir==='asc'?'▲':'▼';
-    rows.sort(function(r1,r2){
-      var v1=val(r1.cells[idx],idx), v2=val(r2.cells[idx],idx);
-      if(v1<v2) return dir==='asc'?-1:1;
-      if(v1>v2) return dir==='asc'?1:-1;
-      return 0;
-    });
-    rows.forEach(function(r){ tb.appendChild(r); });
-  }
-  document.querySelectorAll('table.sortable').forEach(function(table){
-    var ths=table.tHead.rows[0].cells;
-    for(var i=0;i<ths.length;i++){
-      (function(idx){
-        var th=ths[idx];
-        var ar=document.createElement('span'); ar.className='arw'; th.appendChild(ar);
-        th.addEventListener('click',function(){ sortBy(table, idx, th); });
-      })(i);
-    }
-  });
-})();
-</script>
+  <p class="note" style="margin-top:24px">Bukan rekomendasi jual/beli. Rasio bisa membesar saat Foreign Sell kecil, jadi dibaca bersama net value. Sumber: data Foreign Transaction IDX.</p>
+  <footer class="foot">
+    <span>© 2026 AJOINVEST · Konten edukasi, bukan rekomendasi jual/beli.</span>
+    <a href="https://www.instagram.com/ajo.invest">@ajo.invest</a>
+  </footer>
+</main>
 </body>
 </html>

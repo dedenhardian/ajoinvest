@@ -4,274 +4,78 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <title>Kalkulator Nabung Saham · AJOINVEST</title>
-<meta name="description" content="Kalkulator nabung saham (DCA) AJOINVEST. Simulasikan pertumbuhan investasi rutin dengan asumsi imbal hasil. Untuk edukasi, bukan jaminan atau rekomendasi.">
-<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='7' fill='%231c1b19'/><path d='M6 22 L13 14 L18 18 L26 9' stroke='%23e8821e' stroke-width='3' fill='none' stroke-linecap='round' stroke-linejoin='round'/></svg>">
-<style>
-:root{
-  --bg:#f7f3ea; --bg2:#f1ebdd; --card:#ffffff; --line:#e7dfcd;
-  --ink:#1f1c17; --mut:#7c746a;
-  --tan:#cdbf9e; --tan-soft:#ece4d2;
-  --orange:#e8821e; --orange-d:#c96f12;
-  --dark:#1c1b19; --dark-txt:#efe7d6;
-  --buy:#16a34a; --sell:#dc2626;
-}
-*{box-sizing:border-box}
-html{scroll-behavior:smooth}
-body{margin:0;color:var(--ink);background:var(--bg);
-  font-family:-apple-system,Segoe UI,Roboto,Arial,sans-serif;line-height:1.6;min-height:100vh}
-a{color:var(--orange-d);text-decoration:none}
-a:hover{text-decoration:underline}
-.wrap{max-width:960px;margin:0 auto;padding:0 20px}
-
-/* Nav */
-.nav{position:sticky;top:0;z-index:10;background:var(--dark);border-bottom:1px solid #2c2a26}
-.nav .wrap{display:flex;align-items:center;justify-content:space-between;height:60px}
-.brand{font-weight:800;letter-spacing:.5px;font-size:17px;color:var(--dark-txt);text-decoration:none}
-.brand:hover{color:#fff;text-decoration:none}
-.brand span{color:var(--orange)}
-.nav ul{display:flex;gap:22px;list-style:none;margin:0;padding:0;font-size:14px}
-.nav a{color:#b7ad9a}
-.nav a.active,.nav a:hover{color:#fff;text-decoration:none}
-
-section{padding:34px 0}
-h1.section{font-size:28px;margin:0 0 6px;color:var(--ink)}
-.sub{color:var(--mut);font-size:15px;margin:0 0 24px;max-width:640px}
-
-.calc{display:grid;grid-template-columns:1fr 1.15fr;gap:22px;align-items:start}
-.card{background:var(--card);border:1px solid var(--line);border-radius:14px;
-  padding:22px;box-shadow:0 6px 20px rgba(60,50,30,.06)}
-.card h3{margin:0 0 16px;font-size:16px;color:var(--ink)}
-label{display:block;font-size:13px;color:var(--mut);margin:0 0 5px;font-weight:600}
-.field{margin-bottom:16px}
-.inrow{display:flex;align-items:center;border:1px solid var(--line);border-radius:10px;
-  background:#fbf8f1;overflow:hidden}
-.inrow .pre{padding:10px 12px;color:var(--mut);font-size:14px;background:#f1ebdd;border-right:1px solid var(--line)}
-.inrow input{border:0;background:transparent;padding:10px 12px;font-size:15px;width:100%;
-  color:var(--ink);outline:none;font-variant-numeric:tabular-nums}
-.inrow .suf{padding:10px 12px;color:var(--mut);font-size:14px;background:#f1ebdd;border-left:1px solid var(--line)}
-.hint{font-size:11px;color:var(--mut);margin-top:5px}
-.btn{display:inline-block;background:var(--orange);color:#fff;font-weight:700;border:0;cursor:pointer;
-  padding:11px 22px;border-radius:10px;font-size:15px;width:100%;margin-top:4px}
-.btn:hover{filter:brightness(1.05)}
-
-/* Hasil */
-.big{font-size:30px;font-weight:800;color:var(--ink);margin:2px 0 2px;font-variant-numeric:tabular-nums}
-.rescol{display:flex;gap:12px;flex-wrap:wrap;margin:14px 0 6px}
-.stat{flex:1;min-width:130px;background:#fbf8f1;border:1px solid var(--line);border-radius:10px;padding:12px 14px}
-.stat .lab{font-size:11px;color:var(--mut);text-transform:uppercase;letter-spacing:.5px}
-.stat .v{font-size:18px;font-weight:700;font-variant-numeric:tabular-nums;margin-top:2px}
-.v.buy{color:var(--buy)}
-.chartbox{margin-top:8px}
-.leg{display:flex;gap:16px;font-size:12px;color:var(--mut);margin-top:8px;flex-wrap:wrap}
-.leg i{display:inline-block;width:11px;height:11px;border-radius:3px;margin-right:5px;vertical-align:-1px}
-
-table{width:100%;border-collapse:collapse;font-size:13px;margin-top:14px}
-th{text-align:right;color:var(--mut);font-weight:600;font-size:11px;text-transform:uppercase;
-  letter-spacing:.5px;padding:6px 10px;border-bottom:1px solid var(--line)}
-th:first-child{text-align:left}
-td{padding:8px 10px;border-bottom:1px solid var(--line);text-align:right;font-variant-numeric:tabular-nums}
-td:first-child{text-align:left;font-weight:600}
-tr:last-child td{border-bottom:none}
-.tscroll{overflow-x:auto;-webkit-overflow-scrolling:touch}
-
-.note{background:var(--tan-soft);border:1px solid #ddd0b3;border-left:3px solid var(--orange);
-  border-radius:8px;padding:14px 16px;color:#6b5a3a;font-size:13px;margin:22px 0 0}
-.ebookcta{background:linear-gradient(180deg,#fff,#fdf3e6);border:1px solid #f0cfa0;border-radius:14px;
-  padding:20px;margin-top:22px;text-align:center}
-.ebookcta h3{margin:0 0 6px;font-size:17px}
-.ebookcta p{margin:0 0 14px;color:var(--mut);font-size:14px}
-.ebookcta a{display:inline-block;background:var(--orange);color:#fff;font-weight:700;padding:10px 20px;border-radius:10px}
-.ebookcta a:hover{filter:brightness(1.05);text-decoration:none}
-
-footer{border-top:1px solid var(--line);margin-top:40px;padding:26px 0;color:var(--mut);font-size:13px;text-align:center}
-footer .social{margin-bottom:10px;display:flex;gap:16px;justify-content:center;flex-wrap:wrap}
-footer .social a{color:var(--orange-d)}
-
-@media(max-width:720px){
-  .calc{grid-template-columns:1fr}
-  .nav ul{gap:14px}
-  .big{font-size:26px}
-}
-</style>
+<meta name="description" content="Simulasi setoran rutin (DCA) untuk edukasi.">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700&display=swap">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='7' fill='%231a1a19'/><path d='M6 22 L13 14 L18 18 L26 9' stroke='%23a06f24' stroke-width='3' fill='none' stroke-linecap='round' stroke-linejoin='round'/></svg>">
+<link rel="stylesheet" href="style.css">
 </head>
 <body>
-<nav class="nav"><div class="wrap">
-  <a href="./" class="brand">AJO<span>INVEST</span></a>
-  <ul>
-    <li><a href="screening.html">Screening Harian</a></li>
-    <li><a href="kalkulator.html" class="active">Kalkulator</a></li>
-    <li><a href="blog.html">Blog</a></li>
-    <li><a href="ebook.html">Ebook</a></li>
-    <li><a href="about.html">Tentang</a></li>
-  </ul>
-</div></nav>
+<header class="topbar"><div class="inner">
+  <a class="brand" href="index.html">AJOINVEST</a>
+  <nav class="topnav">
+    <a href="screening.html">Screening</a>
+    <a href="kalkulator.html" aria-current="page">Kalkulator</a>
+    <a href="blog.html">Blog</a>
+    <a href="ebook.html">Ebook</a>
+    <a href="about.html">Tentang</a>
+  </nav>
+</div></header>
+<main class="wrap">
+  <h1 class="h-page" style="margin-bottom:6px">Kalkulator nabung saham</h1>
+  <p class="lead" style="margin-bottom:26px">Simulasi setoran rutin. Ilustrasi, bukan jaminan hasil.</p>
 
-<section><div class="wrap">
-  <h1 class="section">🧮 Kalkulator Nabung Saham</h1>
-  <p class="sub">Simulasikan pertumbuhan investasi bila Anda menyetor secara rutin (dollar cost averaging). Ubah angkanya, lihat proyeksinya. Ini ilustrasi berdasarkan asumsi imbal hasil, bukan jaminan hasil di masa depan.</p>
-
-  <div class="calc">
-    <!-- INPUT -->
-    <div class="card">
-      <h3>Isi rencana Anda</h3>
-      <div class="field">
-        <label for="awal">Setoran awal</label>
-        <div class="inrow"><span class="pre">Rp</span><input id="awal" inputmode="numeric" value="5.000.000"></div>
-      </div>
-      <div class="field">
-        <label for="bulanan">Setoran rutin per bulan</label>
-        <div class="inrow"><span class="pre">Rp</span><input id="bulanan" inputmode="numeric" value="1.000.000"></div>
-      </div>
-      <div class="field">
-        <label for="return">Estimasi imbal hasil per tahun</label>
-        <div class="inrow"><input id="return" inputmode="decimal" value="12"><span class="suf">% / th</span></div>
-        <div class="hint">Sekadar asumsi. IHSG historis kira-kira 8 sampai 12 persen per tahun, tapi hasil nyata bisa jauh berbeda.</div>
-      </div>
-      <div class="field">
-        <label for="tahun">Jangka waktu</label>
-        <div class="inrow"><input id="tahun" inputmode="numeric" value="10"><span class="suf">tahun</span></div>
-      </div>
-      <div class="field">
-        <label for="naik">Kenaikan setoran per tahun (opsional)</label>
-        <div class="inrow"><input id="naik" inputmode="decimal" value="0"><span class="suf">% / th</span></div>
-        <div class="hint">Misalnya setoran naik mengikuti kenaikan gaji.</div>
-      </div>
-      <button class="btn" id="hitung">Hitung Proyeksi</button>
+  <div class="cols cols-calc">
+    <div class="card" style="padding:18px 20px">
+      <div class="field"><label for="awal">Setoran awal</label><div class="box"><span class="unit">Rp</span><input id="awal" type="number" value="5000000"></div></div>
+      <div class="field"><label for="bulanan">Setoran rutin per bulan</label><div class="box"><span class="unit">Rp</span><input id="bulanan" type="number" value="1000000"></div></div>
+      <div class="field"><label for="imbal">Estimasi imbal hasil</label><div class="box"><input id="imbal" type="number" value="10"><span class="unit">% / th</span></div></div>
+      <div class="field"><label for="tahun">Jangka waktu</label><div class="box"><input id="tahun" type="number" value="10"><span class="unit">tahun</span></div></div>
+      <div class="field"><label for="naik">Kenaikan setoran per tahun</label><div class="box"><input id="naik" type="number" value="0"><span class="unit">% / th</span></div></div>
+      <p class="note">IHSG historis sekitar 8–12% per tahun; hasil nyata bisa berbeda jauh.</p>
     </div>
 
-    <!-- HASIL -->
-    <div class="card">
-      <h3>Proyeksi nilai portofolio</h3>
-      <div class="lab" style="font-size:11px;color:var(--mut);text-transform:uppercase;letter-spacing:.5px">Estimasi nilai akhir</div>
-      <div class="big" id="rNilai">Rp 0</div>
-      <div class="rescol">
-        <div class="stat"><div class="lab">Total setoran</div><div class="v" id="rSetor">Rp 0</div></div>
-        <div class="stat"><div class="lab">Estimasi pertumbuhan</div><div class="v buy" id="rGrow">Rp 0</div></div>
+    <div>
+      <div class="grid" style="grid-template-columns:repeat(auto-fit,minmax(190px,1fr))">
+        <div class="card stat stat-dark"><div class="label">Estimasi nilai akhir</div><div class="val num" id="out-akhir">Rp 0</div></div>
+        <div class="card stat"><div class="label">Total setoran</div><div class="val num" id="out-setoran">Rp 0</div></div>
+        <div class="card stat"><div class="label">Pertumbuhan</div><div class="val num" id="out-growth" style="color:var(--accent)">Rp 0</div></div>
       </div>
-      <div class="chartbox"><svg id="chart" viewBox="0 0 520 240" width="100%" height="240" role="img" aria-label="Grafik pertumbuhan"></svg></div>
-      <div class="leg">
-        <span><i style="background:#cdbf9e"></i>Total setoran</span>
-        <span><i style="background:#e8821e"></i>Nilai portofolio</span>
+      <div class="tbl">
+        <div class="tr th"><span>Tahun</span><span class="r">Total setoran</span><span class="r">Nilai portofolio</span></div>
+        <div id="proyeksi"></div>
       </div>
-      <div class="tscroll"><table id="tbl"><thead><tr><th>Tahun</th><th>Total setoran</th><th>Nilai portofolio</th></tr></thead><tbody></tbody></table></div>
+      <p class="note" style="margin-top:14px">Bunga majemuk bulanan dari asumsi yang Anda isi. Return saham berfluktuasi dan bisa negatif.</p>
     </div>
   </div>
-
-  <div class="note"><b>Catatan.</b> Kalkulator ini memakai perhitungan bunga majemuk bulanan dari asumsi imbal hasil yang Anda isi. Angka yang keluar adalah ilustrasi, bukan janji atau jaminan hasil. Return saham berfluktuasi dan bisa negatif. Ini bukan rekomendasi jual atau beli, gunakan untuk edukasi dan perencanaan pribadi.</div>
-
-  <div class="ebookcta">
-    <h3>Mau tahu cara memilih sahamnya?</h3>
-    <p>Rutin nabung itu satu hal, memilih saham yang tepat hal lain. Pelajari cara saya membaca aliran dana asing di ebook.</p>
-    <a href="ebook.html">Lihat Ebook →</a>
-  </div>
-</div></section>
-
-<footer><div class="wrap">
-  <div class="social">
-    <a href="https://www.instagram.com/ajo.invest" target="_blank" rel="noopener">Instagram</a>
-  </div>
-  © 2026 AJOINVEST · Ilustrasi untuk edukasi · Bukan rekomendasi jual/beli.
-</div></footer>
 
 <script>
 (function(){
-  var $=function(id){return document.getElementById(id)};
-  function toNum(s){ var n=parseFloat(String(s).replace(/[^\d.,-]/g,'').replace(/\./g,'').replace(',', '.')); return isNaN(n)?0:n; }
-  function fmt(n){ return 'Rp '+Math.round(n).toLocaleString('id-ID'); }
-  function fmtShort(n){
-    if(n>=1e12) return (n/1e12).toFixed(1).replace('.',',')+' T';
-    if(n>=1e9) return (n/1e9).toFixed(1).replace('.',',')+' M';
-    if(n>=1e6) return (n/1e6).toFixed(0)+' jt';
-    return Math.round(n).toLocaleString('id-ID');
-  }
-  // format ribuan saat mengetik di field Rp
-  function bindThousand(el){
-    el.addEventListener('input',function(){
-      var caretEnd = el.selectionStart===el.value.length;
-      var v=el.value.replace(/[^\d]/g,'');
-      el.value = v? parseInt(v,10).toLocaleString('id-ID') : '';
-      if(caretEnd){ el.selectionStart=el.selectionEnd=el.value.length; }
-    });
-  }
-  bindThousand($('awal')); bindThousand($('bulanan'));
-
+  var ids=['awal','bulanan','imbal','tahun','naik'];
+  var rp=function(n){return 'Rp '+Math.round(n).toLocaleString('id-ID');};
   function hitung(){
-    var awal=toNum($('awal').value);
-    var bulanan=toNum($('bulanan').value);
-    var r=toNum($('return').value)/100;
-    var thn=Math.max(1,Math.min(50,Math.round(toNum($('tahun').value)||1)));
-    var naik=toNum($('naik').value)/100;
-    var rm=Math.pow(1+r,1/12)-1; // return bulanan ekuivalen
-
-    var nilai=awal, setor=awal, setorBulan=bulanan;
-    var series=[{y:0,setor:setor,nilai:nilai}];
-    for(var y=1;y<=thn;y++){
-      for(var m=0;m<12;m++){
-        nilai=nilai*(1+rm)+setorBulan;
-        setor+=setorBulan;
-      }
-      series.push({y:y,setor:setor,nilai:nilai});
-      setorBulan=setorBulan*(1+naik);
+    var v={};ids.forEach(function(i){v[i]=Number(document.getElementById(i).value)||0;});
+    var rm=Math.pow(1+v.imbal/100,1/12)-1, nilai=v.awal, setor=v.awal, bln=v.bulanan, html='';
+    var th=Math.max(1,Math.min(50,v.tahun||1));
+    for(var y=1;y<=th;y++){
+      for(var m=0;m<12;m++){nilai=nilai*(1+rm)+bln;setor+=bln;}
+      html+='<div class="tr"><span>'+y+'</span><span class="r muted">'+rp(setor)+'</span><span class="r" style="font-weight:500">'+rp(nilai)+'</span></div>';
+      bln=bln*(1+v.naik/100);
     }
-    var grow=nilai-setor;
-    $('rNilai').textContent=fmt(nilai);
-    $('rSetor').textContent=fmt(setor);
-    $('rGrow').textContent=fmt(grow);
-
-    // tabel
-    var tb=$('tbl').getElementsByTagName('tbody')[0]; tb.innerHTML='';
-    series.forEach(function(p){
-      if(p.y===0) return;
-      var tr=document.createElement('tr');
-      tr.innerHTML='<td>Tahun '+p.y+'</td><td>'+fmt(p.setor)+'</td><td>'+fmt(p.nilai)+'</td>';
-      tb.appendChild(tr);
-    });
-    drawChart(series);
+    document.getElementById('proyeksi').innerHTML=html;
+    document.getElementById('out-akhir').textContent=rp(nilai);
+    document.getElementById('out-setoran').textContent=rp(setor);
+    document.getElementById('out-growth').textContent=rp(nilai-setor);
   }
-
-  function drawChart(series){
-    var W=520,H=240,padL=44,padR=12,padT=14,padB=26;
-    var max=0; series.forEach(function(p){ if(p.nilai>max)max=p.nilai; });
-    if(max<=0) max=1;
-    var n=series.length-1; if(n<1)n=1;
-    function X(i){ return padL+(W-padL-padR)*(i/n); }
-    function Y(v){ return H-padB-(H-padT-padB)*(v/max); }
-    function path(key){
-      var d='';
-      series.forEach(function(p,i){ d+=(i===0?'M':'L')+X(i).toFixed(1)+' '+Y(p[key]).toFixed(1)+' '; });
-      return d.trim();
-    }
-    function area(key){
-      var d='M'+X(0)+' '+Y(0)+' ';
-      series.forEach(function(p,i){ d+='L'+X(i).toFixed(1)+' '+Y(p[key]).toFixed(1)+' '; });
-      d+='L'+X(n)+' '+Y(0)+' Z';
-      return d;
-    }
-    var grid='';
-    for(var g=0;g<=4;g++){
-      var val=max*g/4, yy=Y(val);
-      grid+='<line x1="'+padL+'" y1="'+yy.toFixed(1)+'" x2="'+(W-padR)+'" y2="'+yy.toFixed(1)+'" stroke="#e7dfcd" stroke-width="1"/>';
-      grid+='<text x="'+(padL-6)+'" y="'+(yy+3).toFixed(1)+'" text-anchor="end" font-size="9" fill="#9a9184">'+fmtShort(val)+'</text>';
-    }
-    var xlab='';
-    var step=Math.ceil(n/6);
-    for(var i=0;i<=n;i+=step){
-      xlab+='<text x="'+X(i).toFixed(1)+'" y="'+(H-8)+'" text-anchor="middle" font-size="9" fill="#9a9184">'+series[i].y+'</text>';
-    }
-    var svg=$('chart');
-    svg.innerHTML=grid+
-      '<path d="'+area('nilai')+'" fill="#e8821e" opacity="0.10"/>'+
-      '<path d="'+path('setor')+'" fill="none" stroke="#cdbf9e" stroke-width="2.5" stroke-linejoin="round"/>'+
-      '<path d="'+path('nilai')+'" fill="none" stroke="#e8821e" stroke-width="2.5" stroke-linejoin="round"/>'+
-      xlab;
-  }
-
-  $('hitung').addEventListener('click',hitung);
-  ['return','tahun','naik','awal','bulanan'].forEach(function(id){
-    $(id).addEventListener('keydown',function(e){ if(e.key==='Enter') hitung(); });
-  });
+  ids.forEach(function(i){document.getElementById(i).addEventListener('input',hitung);});
   hitung();
 })();
 </script>
+
+  <footer class="foot">
+    <span>© 2026 AJOINVEST · Konten edukasi, bukan rekomendasi jual/beli.</span>
+    <a href="https://www.instagram.com/ajo.invest">@ajo.invest</a>
+  </footer>
+</main>
 </body>
 </html>

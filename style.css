@@ -1,0 +1,150 @@
+/* AJOINVEST — satu-satunya stylesheet. Ubah warna/ukuran di :root. */
+:root{
+  --bg:#f2f1ef; --card:#fff; --ink:#1a1a19; --ink-2:#57544f; --ink-3:#7d7a75;
+  --line:#e2dfda; --line-2:#eae7e2; --accent:#a06f24; --accent-line:#d9b784;
+  --radius:6px; --wrap:980px;
+}
+*,*::before,*::after{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--bg);color:var(--ink);
+  font-family:Archivo,system-ui,sans-serif;font-size:15px;line-height:1.55}
+a{color:var(--accent);text-decoration:none}
+a:hover{text-decoration:underline}
+a:focus-visible,input:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+h1,h2,h3,h4{margin:0;letter-spacing:-.02em;font-weight:600}
+p{margin:0}
+.wrap{max-width:var(--wrap);margin:0 auto;padding:34px 22px 64px}
+
+/* masthead */
+.topbar{background:var(--ink);color:var(--bg);padding:0 22px;position:sticky;top:0;z-index:5}
+.topbar .inner{max-width:var(--wrap);margin:0 auto;display:flex;flex-wrap:wrap;
+  align-items:center;justify-content:space-between;gap:12px;min-height:56px;padding:8px 0}
+.brand{font-weight:700;font-size:15px;letter-spacing:.16em;color:var(--bg)}
+.brand:hover{text-decoration:none}
+.topnav{display:flex;flex-wrap:wrap;gap:18px;font-size:13px}
+.topnav a{color:#a9a6a1}
+.topnav a:hover,.topnav a[aria-current="page"]{color:var(--bg);text-decoration:none}
+
+/* umum */
+.kicker{display:inline-block;font-size:11px;font-weight:600;letter-spacing:.1em;
+  text-transform:uppercase;color:var(--accent);border:1px solid var(--accent-line);
+  border-radius:3px;padding:3px 8px}
+.h-page{font-size:32px}
+.lead{font-size:15px;color:var(--ink-2)}
+.section-h{display:flex;align-items:center;gap:10px;margin:0 0 12px}
+.section-h h2{font-size:15px;letter-spacing:.04em;text-transform:uppercase}
+.section-h span{font-size:12px;color:var(--ink-3)}
+.note{font-size:12px;color:var(--ink-3)}
+.num{font-variant-numeric:tabular-nums;white-space:nowrap}
+.card{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);padding:16px}
+.grid{display:grid;gap:10px}
+.grid-auto{display:grid;gap:10px;grid-template-columns:repeat(auto-fit,minmax(230px,1fr))}
+.grid-stats{display:grid;gap:10px;grid-template-columns:repeat(auto-fit,minmax(150px,1fr))}
+.btn{display:inline-flex;align-items:center;font-size:14px;font-weight:500;
+  padding:10px 18px;border-radius:5px;border:1px solid transparent}
+.btn:hover{text-decoration:none}
+.btn-dark{background:var(--ink);color:var(--bg)}
+.btn-dark:hover{background:#000}
+.btn-line{border-color:#cfcbc5;color:var(--ink)}
+.btn-line:hover{background:#e9e7e3}
+.foot{border-top:1px solid #dedad4;margin-top:56px;padding-top:16px;display:flex;
+  flex-wrap:wrap;justify-content:space-between;gap:12px;font-size:12px;color:var(--ink-3)}
+
+/* stat */
+.stat .label{font-size:11px;letter-spacing:.06em;text-transform:uppercase;color:var(--ink-3)}
+.stat .val{font-size:22px;font-weight:600;margin-top:2px}
+.stat-dark{background:var(--ink);color:var(--bg);border-color:var(--ink)}
+.stat-dark .label{color:#a9a6a1}
+
+/* baris saham */
+.row{display:grid;grid-template-columns:1fr auto;gap:14px;align-items:center;padding:14px 16px}
+.row .kode{font-size:19px;font-weight:700;letter-spacing:.02em}
+.row .sinyal{font-size:12px;color:var(--ink-3)}
+.row .head{display:flex;align-items:baseline;gap:10px}
+.row .meter{display:flex;align-items:center;gap:10px;margin-top:8px}
+.row .track{width:120px;height:6px;background:var(--line-2);border-radius:3px}
+.row .fill{display:block;height:6px;background:var(--accent);border-radius:3px}
+.row .rasio{font-size:12px;color:var(--ink-2);font-variant-numeric:tabular-nums}
+.row .net-l{font-size:11px;letter-spacing:.06em;text-transform:uppercase;color:var(--ink-3)}
+.row .net{font-size:20px;font-weight:600}
+.row-hl{border-left:3px solid var(--accent)}
+
+/* tabel proyeksi */
+.tbl{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);padding:4px 16px 8px;margin-top:14px}
+.tbl .tr{display:grid;grid-template-columns:56px 1fr 1fr;gap:12px;padding:8px 0;
+  border-bottom:1px solid #f0eeea;font-size:14px;font-variant-numeric:tabular-nums}
+.tbl .th{padding:10px 0;border-bottom:1px solid var(--line-2);font-size:11px;
+  letter-spacing:.06em;text-transform:uppercase;color:var(--ink-3)}
+.tbl .r{text-align:right}
+.tbl .muted{color:var(--ink-3)}
+
+/* form */
+.field{margin-bottom:16px}
+.field label{display:block;font-size:12px;font-weight:500;color:var(--ink-2);margin-bottom:5px}
+.field .box{display:flex;align-items:center;gap:8px;border:1px solid #dedad4;border-radius:5px;padding:7px 10px;background:#fff}
+.field input{flex:1;min-width:0;border:0;background:transparent;font:inherit;font-size:17px;
+  font-weight:600;font-variant-numeric:tabular-nums;color:var(--ink);text-align:right}
+.field .unit{font-size:12px;color:var(--ink-3)}
+
+/* layout dua kolom */
+.cols{display:grid;gap:40px;align-items:start}
+.cols-hero{grid-template-columns:1.3fr 1fr}
+.cols-calc{grid-template-columns:320px 1fr;gap:32px}
+.cols-ebook{grid-template-columns:300px 1fr}
+.cols-about{grid-template-columns:1fr 300px}
+@media (max-width:760px){ .cols{grid-template-columns:1fr !important;gap:28px} }
+
+.cover{aspect-ratio:3/4;background:var(--ink);border-radius:var(--radius);padding:26px 22px;
+  display:flex;flex-direction:column;justify-content:space-between}
+.cover .t{font-size:30px;font-weight:600;line-height:1.1;color:var(--bg)}
+.cover .k{font-size:10px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:var(--accent-line)}
+.cover hr{height:1px;border:0;background:#4a4844;margin:14px 0 10px}
+
+
+/* ===== Tambahan AJOINVEST: callout, artikel, daftar arsip ===== */
+.callout{background:#faf8f4;border:1px solid var(--line);border-left:3px solid var(--accent);
+  border-radius:var(--radius);padding:14px 16px;font-size:14px;color:var(--ink-2)}
+.callout b{color:var(--ink)}
+
+/* artikel blog */
+.article{max-width:720px;margin:0 auto}
+.article h1{font-size:30px;line-height:1.25;margin-bottom:4px}
+.article .meta{font-size:13px;color:var(--ink-3);margin:6px 0 26px}
+.article .lead{font-size:18px;color:var(--ink);margin-bottom:18px}
+.article p{margin:0 0 16px;color:var(--ink-2)}
+.article h2{font-size:20px;margin:30px 0 10px;color:var(--ink)}
+.article ul{margin:0 0 16px;padding-left:20px;color:var(--ink-2)}
+.article li{margin-bottom:6px}
+.article a{font-weight:500}
+.article .callout{display:block;margin:18px 0}
+.article table{width:100%;border-collapse:collapse;font-size:14px;margin:0 0 16px}
+.article th{text-align:left;font-size:11px;letter-spacing:.06em;text-transform:uppercase;
+  color:var(--ink-3);font-weight:600;padding:8px 10px;border-bottom:1px solid var(--line)}
+.article td{padding:9px 10px;border-bottom:1px solid var(--line-2)}
+.article .num{text-align:right;font-variant-numeric:tabular-nums}
+figure{margin:22px 0;background:var(--card);border:1px solid var(--line);
+  border-radius:var(--radius);padding:16px 16px 12px}
+figure svg{width:100%;height:auto;display:block}
+figcaption{font-size:12px;color:var(--ink-3);margin-top:8px;text-align:center}
+
+/* kotak ebook di dalam artikel */
+.ebkbox{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);padding:20px;margin:24px 0}
+.ebkbox .promo{display:inline-block;font-size:11px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;
+  color:var(--accent);border:1px solid var(--accent-line);border-radius:3px;padding:3px 8px;margin-bottom:10px}
+.ebkbox h3{font-size:20px;margin-bottom:6px}
+.ebkbox .price{font-size:20px;font-weight:700;font-variant-numeric:tabular-nums;margin-bottom:6px}
+.ebkbox .price s{font-size:14px;color:var(--ink-3);font-weight:400;margin-left:6px}
+.ebkbox p{color:var(--ink-2);margin-bottom:14px}
+.ebkbox .btn{background:var(--ink);color:var(--bg)}
+
+/* daftar (arsip & blog) */
+.list-item{display:block;color:var(--ink)}
+.list-item:hover{text-decoration:none;border-color:var(--accent-line)}
+.list-item .meta{font-size:11px;letter-spacing:.06em;text-transform:uppercase;color:var(--ink-3);margin-bottom:6px}
+
+@media (max-width:560px){
+  .h-page{font-size:26px}
+  h1{font-size:30px !important}
+  .row{grid-template-columns:1fr auto;gap:10px;padding:12px 14px}
+  .row .track{width:80px}
+}
